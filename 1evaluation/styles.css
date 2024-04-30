@@ -81,7 +81,6 @@ tr:nth-child(even){
  display: flex;
  gap: 6rem;
  padding: 2rem;
- margin-left: 10rem;
  justify-content: center;
  align-items: center;
  
