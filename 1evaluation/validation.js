@@ -12,7 +12,7 @@ class validationForm {
     
     namesValidation(){
 
-        //Se utilizara para las validaciones de nobre y apellido
+        //Se utilizara para las validaciones de nombre y apellido
         const correctNames = [this.name, this.lastName].filter(this.valueInput);
         
         return correctNames.length === 2 ? true : false;
@@ -41,12 +41,12 @@ class validationForm {
     }
 
     valueInput(input) {
+
         const valorInput = input.trim();
         
         return valorInput !== '';
     }
-
-    
+ 
 }
 
 const val = new validationForm("Armando","",0,4198159,"NAGUANAGUA, TERRAZAS DE PARAMACAY");
