@@ -37,24 +37,31 @@ class validationForm {
 
         const lengthAddres = this.addressUser.toString().length;
 
-        return lengthAddres <= 35 ? true : false;
+        return lengthAddres <= 35 && lengthAddres >= 2? true : false;
     }
 
     valueInput(input) {
 
         const valorInput = input.trim();
         
-        return valorInput !== '';
+        return valorInput !== '' &&  valorInput.length >= 2 ? true : false;
     }
- 
+
+    validationAllAtributes(){
+
+        const listMethodAtributes = [this.namesValidation(),this.idUserValidation(), this.phoneNumberValidation(), this.addressUserValidation()]
+
+        const allValid = listMethodAtributes.every(method => method);
+
+        return allValid;
+    }
 }
 
-const val = new validationForm("Armando","",0,4198159,"NAGUANAGUA, TERRAZAS DE PARAMACAY");
+const val = new validationForm("ajaj", "aa" , 1 , 2,4);
 
 console.log(val.namesValidation());
+console.log("Validacion del objeto malo " + val.validationAllAtributes());
 
-console.log(val.idUserValidation());
+const val2 = new validationForm("Armando", "Lopez", 29911900,4377572, "naguaanagua");
 
-console.log(val.phoneNumberValidation());
-
-console.log(val.addressUserValidation());
+console.log("Validacion del objeto bueno " + val2.validationAllAtributes()); 

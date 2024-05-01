@@ -6,7 +6,7 @@ function mostrarFormulario2() {
 document.getElementById('nextBtn').addEventListener('click', function() {
     event.preventDefault();
 
-
+    
     mostrarFormulario2();
 });
 
