@@ -10,6 +10,48 @@ class validationForm {
         
     }
     
+    // Getters
+    get name() {
+        return this._name;
+    }
+
+    get lastName() {
+        return this._lastName;
+    }
+
+    get idUser() {
+        return this._idUser;
+    }
+
+    get phoneNumber() {
+        return this._phoneNumber;
+    }
+
+    get addressUser() {
+        return this._addressUser;
+    }
+
+    // Setters
+    set name(newName) {
+        this._name = newName;
+    }
+
+    set lastName(newLastName) {
+        this._lastName = newLastName;
+    }
+
+    set idUser(newIdUser) {
+        this._idUser = newIdUser;
+    }
+
+    set phoneNumber(newPhoneNumber) {
+        this._phoneNumber = newPhoneNumber;
+    }
+
+    set addressUser(newAddressUser) {
+        this._addressUser = newAddressUser;
+    }
+    
     namesValidation(){
 
         //Se utilizara para las validaciones de nombre y apellido
@@ -56,12 +98,3 @@ class validationForm {
         return allValid;
     }
 }
-
-const val = new validationForm("ajaj", "aa" , 1 , 2,4);
-
-console.log(val.namesValidation());
-console.log("Validacion del objeto malo " + val.validationAllAtributes());
-
-const val2 = new validationForm("Armando", "Lopez", 29911900,4377572, "naguaanagua");
-
-console.log("Validacion del objeto bueno " + val2.validationAllAtributes()); 
