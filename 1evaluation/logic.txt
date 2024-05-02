@@ -1,0 +1,4 @@
+#task list 
+
+agg elementos a la tabla
+terminar de validar el form de carros
