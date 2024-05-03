@@ -11,7 +11,7 @@ export class person{
   //Methods
 
   toString() {
-    return `Usuario:
+    return `Persona:
     Nombre: ${this.name}
     Apellido: ${this.lastName}
     ID: ${this.idUser}
@@ -64,11 +64,11 @@ export class person{
 
 export class car{
 
-  constructor( idCar, yearCar,modelCar,colorCar,photoCar,ownerCar){
+  constructor( idCar, yearCar,brandCar,colorCar,photoCar,ownerCar){
 
     this.idCar = idCar;
     this.yearCar = yearCar;
-    this.modelCar = modelCar;
+    this.brandCar = brandCar;
     this.colorCar = colorCar;
     this.photoCar = photoCar;
     this.ownerCar = ownerCar
@@ -80,9 +80,11 @@ export class car{
     return `Carro:
     ID: ${this.idCar}
     Año: ${this.yearCar}
-    Modelo: ${this.modelCar}
+    Modelo: ${this.brandCar}
     Color: ${this.colorCar}
-    Foto: ${this.photoCar}`;
+    Foto: ${this.photoCar}
+
+    Propietario: ${this.ownerCar}`;
   }
 
   //Getters 
@@ -95,8 +97,8 @@ export class car{
       return this._yearCar;
   }
 
-  get getModelCar() {
-    return this._modelCar;
+  get getbrandCar() {
+    return this._brandCar;
   }
 
   get getColorCar() {
@@ -117,8 +119,8 @@ export class car{
       this._yearCar = newYearCar;
   }
 
-  set setModelCar(newModelCar) {
-      this._modelCar = newModelCar;
+  set setbrandCar(newbrandCar) {
+      this._brandCar = newbrandCar;
   }
 
   set setColorCar(newColorCar) {
@@ -191,5 +193,15 @@ export class validationFormUser {
     yearCarValidation(){
 
       return this.car.yearCar >= 1800 && this.car.yearCar <= 2025 ? true : false;
+    }
+
+    validationAllAtributes() {
+      const listMethodAtributes = [
+        this.idCarValidation(),
+        this.yearCarValidation()
+      ];
+
+      const allValid = listMethodAtributes.every(method => method);
+      return allValid;
     }
   }
