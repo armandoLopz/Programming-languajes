@@ -74,6 +74,9 @@ function addButtonsTable(fila) {
     const celdaActions = document.createElement('td');
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Eliminar';
+    deleteButton.addEventListener('click', function() {
+        this.parentElement.parentElement.remove(); 
+      });
 
     celdaActions.appendChild(deleteButton);
 
