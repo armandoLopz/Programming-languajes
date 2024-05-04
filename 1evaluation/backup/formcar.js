@@ -19,7 +19,7 @@ function mostrarFormulario2(ownerCar) {
 
     //Se asigna el propietario del carro
     car1.ownerCar = ownerCar;
-    
+    console.log(car1.brandCar);
     document.getElementById('form_user').classList.add('hidden');
     document.getElementById('form_car').classList.remove('hidden');
 }
@@ -86,7 +86,6 @@ form_car.addEventListener('submit', (event) => {
     car1.photoCar = document.getElementById("photoCar").value;
 
     const correctDataCar = validationCar.validationAllAtributes()
-    console.log("Se setearon los datos");
     correctDataCar == true ? addElementsTable(car1) : alert("Verifique sus datos"); 
     
 });

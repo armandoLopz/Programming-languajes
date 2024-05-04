@@ -61,7 +61,7 @@ function addElementsTable(car) {
     
     // Agrega la fila a la tabla
     tableListCars.appendChild(fila)
-
+    console.log(car1.toString());
     showTable();
 }
 
@@ -72,11 +72,37 @@ function regresar() {
     
 }
 
+function filterModels() {
+    const selectBrand = document.getElementById('marca').value;
+    const models = getModelsForBrand(selectBrand); // Implementa esta función
+
+    const selectModel = document.getElementById('modelo');
+    selectModel.innerHTML = ''; // Limpia las opciones actuales
+
+    models.forEach((models) => {
+        const option = document.createElement('option');
+        option.value = models;
+        option.textContent = models;
+        selectModel.appendChild(option);
+    });
+}
+
+function getModelsForBrand(marca) {
+    const brandModels = new Map([
+        ['toyota', ['Corolla', 'Camry', 'RAV4','Hilux','Fortuner']],
+        ['honda', ['Civic', 'Accord', 'CR-V', 'Brio','HR-V']],
+        
+    ]);
+
+    return brandModels.get(marca) || [];
+}
+
 document.getElementById('add').addEventListener('click',function(){
     event.preventDefault();
     mostrarFormulario1();
    
 });
+document.getElementById('marca').addEventListener('change', filterModels);
 
 document.getElementById('nextBtn').addEventListener('click', function() {
 
@@ -105,7 +131,7 @@ form_car.addEventListener('submit', (event) => {
     
     car1.idCar = document.getElementById("idCar").value;
     car1.yearCar = document.getElementById("yearCar").value;
-    car1.brandCar = document.getElementById("brandCar").value;
+    car1.brandCar = document.getElementById("marca").value;
     car1.colorCar = document.getElementById("colorCar").value;
     car1.photoCar = document.getElementById("photoCar").value;
 

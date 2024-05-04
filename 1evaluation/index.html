@@ -20,7 +20,7 @@
         </div>
         
     
-     <div class="table" border = "2" id="table" >
+     <div class="table" border = "4" id="table" >
      <table class="custom-table" id="inventario">
             <tr class="datos">
                         <th>foto</th>
@@ -78,24 +78,21 @@
 
         <input type="text" id="yearCar" placeholder='año del carro' class="placa"><br> <br>
 
-        <input type="text" id="brandCar" placeholder="Marca del vehiculo">
-
-            <select name="" id="" class="select">
-
-                <!-- Agregar las marcas del vehiculo a utilizar (8) -->
-                <option value="ford">Ford</option>
-                <option value="toyota">toyota</option>
-            </select> <br>
-     
-        <input  type="text" id="modelCar" placeholder="Modelo del vehiculo">
-
-            <select name="" id="" class="select">
-
-                <!-- Agregar los modelos del vehiculo a utilizar (8) -->
-                <option value="f250">f-250</option>
-                <option value="corolla">corolla</option>
+        <label for="marca" id="brandCar" placeholder="Marca del vehiculo" >Marca:</label>
+            <select id="marca">
+                
+                <option value="entry"></option>
+                <option value="toyota">Toyota</option>
+                <option value="honda">Honda</option>
+                
             </select>
-        </label> <br> <br>
+
+        <label for="modelo" id="modelCar" placeholder="Modelo del vehiculo" >Modelo:</label>
+            <select id="modelo">
+                <!-- Se agregaran dinamicamente -->
+            </select>
+
+        <br> <br>
           
         <div class="selecciones">
             <div class="colorv">

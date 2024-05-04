@@ -195,12 +195,20 @@ export class validationFormUser {
       return this.car.yearCar >= 1800 && this.car.yearCar <= 2025 ? true : false;
     }
 
+    modelValidation(){
+
+      return this.car.brandCar !== "entry" ? true : false;
+
+    }
+
     validationAllAtributes() {
       const listMethodAtributes = [
         this.idCarValidation(),
-        this.yearCarValidation()
+        this.yearCarValidation(),
+        this.modelValidation()
       ];
 
+      console.log(this.modelValidation());
       const allValid = listMethodAtributes.every(method => method);
       return allValid;
     }
