@@ -1,5 +1,4 @@
 import { person, car, validationFormUser,validationFormCar } from './validation.js';
-//import { tableDom } from './main.js';
 
 const user = new person();
 const car1 = new car();
@@ -8,9 +7,7 @@ const validationUser = new validationFormUser(user);
 const validationCar = new validationFormCar(car1);
 
 const form_car = document.getElementById("form2");
-
-
-const tableListCars = localStorage.getItem("table");
+const tableListCars = document.getElementById("inventario");
 
 function mostrarFormulario1() {
 
@@ -28,9 +25,9 @@ function mostrarFormulario2(ownerCar) {
 }
 
 function addElementsTable(car) {
-
+    console.log("hola desde la funcion");
     const fila = document.createElement('tr');
-    
+    console.log("Se esta ejecutando la funcion");
     const celdaCedula = document.createElement('td');
     celdaCedula.textContent = car.idCar;
     fila.appendChild(celdaCedula);
@@ -54,8 +51,9 @@ function addElementsTable(car) {
     
     // Agrega la fila a la tabla
     tableListCars.appendChild(fila)
+    console.log("Se agrego los datos");
     //Se muestra la pag principal
-    form_car.submit()
+    //form_car.submit()
 }
 
 document.getElementById('nextBtn').addEventListener('click', function() {
@@ -88,7 +86,7 @@ form_car.addEventListener('submit', (event) => {
     car1.photoCar = document.getElementById("photoCar").value;
 
     const correctDataCar = validationCar.validationAllAtributes()
-
+    console.log("Se setearon los datos");
     correctDataCar == true ? addElementsTable(car1) : alert("Verifique sus datos"); 
     
 });
