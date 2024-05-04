@@ -58,10 +58,27 @@ function addElementsTable(car) {
     celdaColor.textContent = car.colorCar;
     fila.appendChild(celdaColor);
 
-    
+    const celdaActions = document.createElement('td');
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Eliminar';
+
+    celdaActions.appendChild(deleteButton);
+
+    const readdButton = document.createElement('button');
+    readdButton.textContent = 'Veer';
+
+    celdaActions.appendChild(readdButton);
+
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Actualizar';
+
+    celdaActions.appendChild(editButton);
+
+    fila.appendChild(celdaActions);
+
     // Agrega la fila a la tabla
     tableListCars.appendChild(fila)
-    console.log(car1.toString());
+    
     showTable();
 }
 

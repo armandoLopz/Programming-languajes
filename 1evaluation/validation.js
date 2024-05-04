@@ -208,7 +208,6 @@ export class validationFormUser {
         this.modelValidation()
       ];
 
-      console.log(this.modelValidation());
       const allValid = listMethodAtributes.every(method => method);
       return allValid;
     }
