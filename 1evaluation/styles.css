@@ -1,3 +1,5 @@
+
+
 * {
 	margin: 0px; 
 	padding: 0px; 
@@ -86,43 +88,168 @@ tr:nth-child(even){
  
 } 
 .form_car{
-    background-color: aquamarine;
+    background-image:  linear-gradient(rgb(29, 29, 105),white);
     height: 35rem;
-    width: 20rem;
-    border-radius: 5%;
+    width: 25rem;
+  
     border: 2px;
     box-shadow: #100b29;
     display: flex;
     justify-content: center;
     text-align: center;
+    gap: 2rem;
+    
     
 }
 .form_user{
-    background-color: aqua;
+    background-image:  linear-gradient(rgb(29, 29, 105),white);
     height: 35rem;
-    width: 20rem;
-    border-radius: 5%;
+    width: 25rem;
     border: 2px;
     box-shadow: #100b29;
     text-align: center;
+    gap: 2rem;
    
     
 }
 
 input{
     font-family: 'Roboto', sans-serif;
-    color: #333;
+    color:black;
     font-size: 0.2rem;
     padding: 0.4rem  0.3rem;
-    border-radius: 0.2rem;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     border: none;
-    width: 70%;
-    border-bottom: 0.3rem solid transparent;
+    width: 72%;
+    border-bottom: 1px solid black;
     transition: all 0.3s;
-    font-size: 15px;
-  }
+    font-size: 20px;
+    margin-top: 1rem;
+
+    }
+ ::placeholder{
+    color: black;
+ }       
+  
+        
+        
+      
+  
 
 .hidden {
     display: none;
+}
+.form2{
+   margin: 20px;
+}
+.placa{
+    width: 100%;
+}
+.select{
+    background-color: transparent;
+    border: #100b29;
+}
+.selecciones{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.image{
+    width: 20px;
+    border: none;
+}
+.colorcar{
+    width: 50px;
+    height: 50px;
+    border: none;
+}
+.boton{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 4rem;
+    height: 3rem;
+    color: white;
+    background-color:rgb(29, 29, 105);
+    transition: auto;
+    font-size: 15px;
+    margin-top: 10%;
+    margin-right: 5%;
+    text-align: center;
+    margin-left: 5%;
+    border: none;
+}
+.botons{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 4.5rem;
+    height: 3rem;
+    color: white;
+    background-color:rgb(29, 29, 105);
+    transition: auto;
+    font-size: 15px;
+    margin-top: 6%;
+    margin-right: 5%;
+    text-align: center;
+    margin-left: 5%;
+    border: none;
+    border-radius: 5%;
+
+}
+
+.custom-table {
+    min-width: 900px;}
+    .custom-table thead tr, .custom-table thead th {
+      padding-bottom: 30px;
+      border-top: none;
+      border-bottom: black;
+      color: #fff;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .2rem; }
+    .custom-table tbody th, .custom-table tbody td {
+      color: black;
+      font-weight: 400;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      font-weight: 300;
+      border: none;
+      -webkit-transition: .3s all ease;
+      -o-transition: .3s all ease;
+      transition: .3s all ease; }
+      .custom-table tbody th small, .custom-table tbody td small {
+        color: rgba(255, 255, 255, 0.3);
+        font-weight: 300; }
+      .custom-table tbody th a, .custom-table tbody td a {
+        color: rgba(255, 255, 255, 0.3); }
+      .custom-table tbody th .more, .custom-table tbody td .more {
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: .2rem; }
+    .custom-table tbody tr {
+      -webkit-transition: .3s all ease;
+      -o-transition: .3s all ease;
+      transition: .3s all ease; }
+      .custom-table tbody tr:hover td, .custom-table tbody tr:focus td {
+        color: rgb(29, 29, 105); }
+        .custom-table tbody tr:hover td a, .custom-table tbody tr:focus td a {
+          color: #fdd114; }
+        .custom-table tbody tr:hover td .more, .custom-table tbody tr:focus td .more {
+          color: #fdd114; }
+    .custom-table .td-box-wrap {
+      padding: 0; }
+    .custom-table .box {
+      background: #fff;
+      border-radius: 4px;
+      margin-top: 15px;
+      margin-bottom: 15px; }
+      .custom-table .box td, .custom-table .box th {
+        border: black }
+  
+th{
+    background-image:  linear-gradient(to right,rgb(29, 29, 105),rgb(100, 100, 198));
+}
+.telefono{
+    width: 58%;
+}
+h2{
+    margin-top: 2rem;
 }
