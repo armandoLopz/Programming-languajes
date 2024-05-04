@@ -58,6 +58,17 @@ function addElementsTable(car) {
     celdaColor.textContent = car.colorCar;
     fila.appendChild(celdaColor);
 
+    //Se agregan los botones a la tabla 
+    addButtonsTable(fila);
+
+    // Agrega la fila a la tabla
+    tableListCars.appendChild(fila)
+    
+    showTable();
+}
+
+function addButtonsTable(fila) {
+
     const celdaActions = document.createElement('td');
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Eliminar';
@@ -65,7 +76,7 @@ function addElementsTable(car) {
     celdaActions.appendChild(deleteButton);
 
     const readdButton = document.createElement('button');
-    readdButton.textContent = 'Veer';
+    readdButton.textContent = 'Ver';
 
     celdaActions.appendChild(readdButton);
 
@@ -73,13 +84,8 @@ function addElementsTable(car) {
     editButton.textContent = 'Actualizar';
 
     celdaActions.appendChild(editButton);
-
-    fila.appendChild(celdaActions);
-
-    // Agrega la fila a la tabla
-    tableListCars.appendChild(fila)
     
-    showTable();
+    fila.appendChild(celdaActions);
 }
 
 function regresar() {
