@@ -11,7 +11,7 @@ const tableListCars = document.getElementById("inventario");
 
 
 function mostrarFormulario1() {
-
+    
     document.getElementById('form_user').classList.remove('hidden');
     document.getElementById('menu').classList.add('hidden');
     document.getElementById('table').classList.add('hidden');
@@ -26,7 +26,10 @@ function mostrarFormulario2(ownerCar) {
 }
 
 function showTable() {
-    
+
+    document.getElementById("form1").reset();
+    document.getElementById("form2").reset();
+
     document.getElementById('form_user').classList.add('hidden');
     document.getElementById('form_car').classList.add('hidden');
 
@@ -63,7 +66,6 @@ function addElementsTable(car) {
 
     // Agrega la fila a la tabla
     tableListCars.appendChild(fila)
-    
     showTable();
 }
 
@@ -97,10 +99,10 @@ function regresar() {
 
 function filterModels() {
     const selectBrand = document.getElementById('marca').value;
-    const models = getModelsForBrand(selectBrand); // Implementa esta función
+    const models = getModelsForBrand(selectBrand); 
 
     const selectModel = document.getElementById('modelo');
-    selectModel.innerHTML = ''; // Limpia las opciones actuales
+    selectModel.innerHTML = ''; 
 
     models.forEach((models) => {
         const option = document.createElement('option');
@@ -130,7 +132,7 @@ document.getElementById('marca').addEventListener('change', filterModels);
 document.getElementById('nextBtn').addEventListener('click', function() {
 
     event.preventDefault(); 
-
+    
     user.name = document.getElementById("name").value;
     user.lastName = document.getElementById("lastName").value;
     user.idUser = document.getElementById("idUser").value;
