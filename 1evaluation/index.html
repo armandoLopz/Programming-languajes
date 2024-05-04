@@ -9,17 +9,19 @@
 <body>
 
     <div class="container">
-        <div class="menu">
+        <div class="menu" id="menu">
         <h1>Lista de carros</h1>
         
         <button class="menubutton" id="add">agregar</button>
         <button  class="menubutton" id="read">leer</button>
         <button class="menubutton" id="delete">borrar</button>
         <button class="menubutton" id="update">actualizar</button>
+
         </div>
+        
     
-     <div class="table" border = "2">
-        <table class="principal_cliente" id="inventario">
+     <div class="table" border = "2" id="table" >
+     <table class="custom-table" id="inventario">
             <tr class="datos">
                         <th>foto</th>
                         <th>Completo</th>
@@ -29,9 +31,97 @@
                         <th id="see"></th>
                         
                     </tr>
+            <tr >
+                <td>nombre</td>
+                <td>nombre</td>
+                <td>nombre</td>
+                <td>nombre</td>
+                <td>nombre</td>
+                <td>nombre</td>
+            </tr>
         </table>
         
      </div>
+     <div class="formularios">
+        <div class="form_user hidden" id="form_user">
+
+            <form action="">
+            <h2 >Registro de usuario</h2> <br> <br>
+            <input type="text" id="name" placeholder="Ingrese su nombre:"> <br> <br>
+
+            
+            <input type="text" id="lastName" placeholder="Ingrese su apellido: "><br> <br>
+
+            
+            <input type="text" id="idUser" placeholder="Ingrese su cedula:"><br> <br>
+
+
+                <select name="" id="" class="select"> 
+
+                <option value="0412">0412</option>
+                <option value="0424">0424</option>
+                <option value="0414">0414</option>
+                <option value="0416">0416</option>
+
+            </select> 
+
+            <input type="text" id="phone" class="telefono" placeholder="Ingrese su telefono"><br> <br>
+
+            <input type="text" id="address" placeholder="Ingrese su direccion"><br> <br>
+
+            <button id='nextBtn' class="botons">Siguiente</button>
+
+            </form>
+
+
+           </div>
+      <div class="form_car hidden" id="form_car">
+   
+    <form action="index.html" id="form2" class="form2">
+
+        <h2>Regitrar carro</h2>
+
+         <br> <input type="text" placeholder="placa" id="idCar" class="placa"> <br>
+
+        <input type="text" id="yearCar" placeholder='año del carro' class="placa"><br> <br>
+
+        <input type="text" id="brandCar" placeholder="Marca del vehiculo">
+
+            <select name="" id="" class="select">
+
+                <!-- Agregar las marcas del vehiculo a utilizar (8) -->
+                <option value="ford">Ford</option>
+                <option value="toyota">toyota</option>
+            </select> <br>
+     
+        <input  type="text" id="modelCar" placeholder="Modelo del vehiculo">
+
+            <select name="" id="" class="select">
+
+                <!-- Agregar los modelos del vehiculo a utilizar (8) -->
+                <option value="f250">f-250</option>
+                <option value="corolla">corolla</option>
+            </select>
+        </label> <br> <br>
+          
+        <div class="selecciones">
+            <div class="colorv">
+        <label>Color del vehiculo <input type="color" name="" id="colorCar" class="colorcar"> </label> <br> <br>
+           </div>
+           <div class="foto">
+        <label for="" class="fotol">Foto del vehiculo</label>
+        <input type="image" name="" id="photoCar" class="foto"> <br> <br>
+          </div>
+       </div>
+     
+        <div class="buttons">
+        <button id="send" class="boton">enviar</button>
+        <button id="atras" class="boton">atras</button> 
+        </div>
+    </form>
+
+   </div>
+
     </div>
 
     <script src="main.js"></script>
