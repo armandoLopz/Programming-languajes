@@ -19,14 +19,15 @@ body, html {
     background-image:  linear-gradient(rgb(29, 29, 105),white);
 }
 .menu{
-    margin: 1rem;
+    
     gap: 1rem;
     display: flex;
     flex-direction: row;
-    margin-top: 1rem;
+    justify-content: center;
+    margin-top: -3.5rem;
 }
 .table{
-    margin-top: 6 rem;
+    margin-top: 1rem;
     gap: 3 rem;
     display: flex;
     justify-content: center;
@@ -47,6 +48,7 @@ table{
    
 
     padding-top: 2rem;
+    box-shadow: 6px 6px rgba(0,0,0,0.5);
 }
 th,td{
     border: 1px solid white;
@@ -65,12 +67,12 @@ tr:nth-child(even){
 }
 
 .menubutton{
-    width: 5rem;
-    height: 2rem;
+    width: 12rem;
+    height: 2.5rem;
     color: white;
     background-color: #100b29;
     border-radius: 10%;
-    box-shadow: 6px 6px rgba(0,0,0,0.5);
+    box-shadow: 3px 3px rgba(0,0,0,0.2);
     transition: auto;
     font-size: 15px;
     margin-top: 10%;
@@ -88,7 +90,7 @@ tr:nth-child(even){
  
 } 
 .form_car{
-    background-image:  linear-gradient(rgb(29, 29, 105),white);
+    background-image:  linear-gradient(rgb(177, 177, 223),white);
     height: 35rem;
     width: 25rem;
   
@@ -98,17 +100,20 @@ tr:nth-child(even){
     justify-content: center;
     text-align: center;
     gap: 2rem;
+    box-shadow: 6px 6px 6px 6px rgba(0,0,0,0.5);
     
     
 }
 .form_user{
-    background-image:  linear-gradient(rgb(29, 29, 105),white);
+    background-image:  linear-gradient(rgb(177, 177, 223),white);
     height: 35rem;
     width: 25rem;
     border: 2px;
     box-shadow: #100b29;
     text-align: center;
     gap: 2rem;
+    box-shadow: 6px 6px 6px 6px rgba(0,0,0,0.5);
+    
    
     
 }
@@ -227,7 +232,8 @@ input{
     .custom-table tbody tr {
       -webkit-transition: .3s all ease;
       -o-transition: .3s all ease;
-      transition: .3s all ease; }
+      transition: .3s all ease;
+        }
       .custom-table tbody tr:hover td, .custom-table tbody tr:focus td {
         color: rgb(29, 29, 105); }
         .custom-table tbody tr:hover td a, .custom-table tbody tr:focus td a {
@@ -252,4 +258,52 @@ th{
 }
 h2{
     margin-top: 2rem;
+}
+tr{
+    color: #100b29;
+}
+
+.celda{
+    
+    padding: 10px;
+    border-top: none;
+}
+.leer{
+    margin-left: 10px;
+    width: 30px;
+    background-color: #b5a352;
+    border: none;
+    border-radius: 5%;
+}
+.actualizar{
+    margin-left: 10px;
+    margin-top: 1rem;
+    background-color: rgb(51, 128, 201);
+    border: none;
+    width: 70px;
+    border-radius: 5%;
+}
+.eliminar{
+    background-color: rgb(185, 76, 76);
+    border: none;
+    width: 50px;
+    border-radius: 5%;
+}
+.information{
+    background-image:  linear-gradient(rgb(177, 177, 223),white);
+    height: 35rem;
+    width: 45rem;
+    border: 2px;
+    box-shadow: #100b29;
+    display: flex;
+    text-align: center;
+    gap: 2rem;
+    box-shadow: 6px 6px 6px 6px rgba(0,0,0,0.5);
+    padding: 1rem;
+    padding-left: 3rem;
+}
+img{
+    width: 10px;
+    height: 10px;
+    
 }

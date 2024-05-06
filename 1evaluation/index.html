@@ -9,13 +9,11 @@
 <body>
 
     <div class="container">
-        <div class="menu" id="menu">
         <h1>Lista de carros</h1>
+        <div class="menu" id="menu">
         
-        <button class="menubutton" id="add">agregar</button>
-        <button  class="menubutton" id="read">leer</button>
-        <button class="menubutton" id="delete">borrar</button>
-        <button class="menubutton" id="update">actualizar</button>
+        
+        <button class="menubutton" id="add">agregar nuevo usuario</button>
 
         </div>
         
@@ -24,10 +22,10 @@
      <table class="custom-table" id="inventario">
             <tr class="datos">
                         
-                        <th>foto</th>
+                        <th>Placa</th>
                         <th>Completo</th>
                         <th>Cedula</th>
-                        <th>Placa</th>
+                        <th>Foto</th>
                         <th>color</th>
                         <th id="see"></th>
                         
@@ -98,7 +96,11 @@
            </div>
            <div class="foto">
         <label for="" class="fotol">Foto del vehiculo</label>
-        <input type="image" name="" id="photoCar" class="foto"> <br> <br>
+       <button id="buscarButton">Buscar</button>
+       <img id="imageDisplay " src class="image_car">
+       <input type="image" id="photocar"> 
+        
+
           </div>
        </div>
      
@@ -107,11 +109,71 @@
         <button id="atras" class="boton">atras</button> 
         </div>
     </form>
+  
+   </div>
+   <div class="informacion hidden">
+   <div class="information">
+    <div class="user ">
+    <h2>Informacion del usuario</h2>
+    <label for="">Nombre completo: </label>
+    <h4>   </h4> <br> <br>
+    <label for="">Cedula: </label>
+    <h4>  </h4> <br> <br>
+    <label for="">Numero de telefono </label>
+    <h4>  </h4> <br> <br>
+    <label for="">Ubicacion: </label>
+    <h4>  </h4> <br> <br>
+    </div>
+  <div class="car">
+    <h2>Informacion del Vehiculo</h2>  
+    <img src="" alt="">
+    <label for="">Placa: </label>
+    <h4>  </h4> <br> <br>
+    <label for="">año del vehiculo: </label>
+    <h4>  </h4> <br> <br>
+    <label for="">Marca del Vehiculo </label>
+    <h4> </h4> <br> <br>
+    <label for="">Modelo del cehiculo: </label>
+    <h4> </h4> <br> <br>
+    <label for="">Modelo del cehiculo: </label> 
+    <h4>Mustang </h4> <br> <br>
+  </div>
+ </div>
+</div>
 
+
+     
    </div>
 
     </div>
 
     <script src="main.js"  type="module"></script>
+    <script>
+        const buscarButton = document.getElementById('buscarButton');
+     const imageDisplay = document.getElementById('imageDisplay');
+ 
+   buscarButton.addEventListener('click', () => {
+     const input = document.createElement('input');
+     input.type = 'file';
+     input.accept = 'image/*';
+     input.style.display = 'none';
+ 
+     input.addEventListener('change', () => {
+         const file = input.files[0];
+         if (file) {
+             const reader = new FileReader();
+             reader.onload = (e) => {
+                 imageDisplay.src = e.target.result;
+             };
+             reader.readAsDataURL(file);
+         }
+     });
+ 
+     input.click();
+ });
+ 
+     </script>
+   
+     
 </body>
 </html>

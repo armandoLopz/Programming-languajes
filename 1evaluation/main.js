@@ -72,7 +72,9 @@ function addElementsTable(car) {
 function addButtonsTable(fila) {
 
     const celdaActions = document.createElement('td');
+    celdaActions.classList.add("celda");
     const deleteButton = document.createElement('button');
+    deleteButton.classList.add("eliminar");
     deleteButton.textContent = 'Eliminar';
     deleteButton.addEventListener('click', function() {
         this.parentElement.parentElement.remove(); 
@@ -81,16 +83,19 @@ function addButtonsTable(fila) {
     celdaActions.appendChild(deleteButton);
 
     const readdButton = document.createElement('button');
+    readdButton.classList.add("leer");
     readdButton.textContent = 'Ver';
-
     celdaActions.appendChild(readdButton);
 
     const editButton = document.createElement('button');
+    editButton.classList.add("actualizar")
     editButton.textContent = 'Actualizar';
+    
 
     celdaActions.appendChild(editButton);
     
     fila.appendChild(celdaActions);
+   
 }
 
 function regresar() {
@@ -161,10 +166,14 @@ form_car.addEventListener('submit', (event) => {
     car1.yearCar = document.getElementById("yearCar").value;
     car1.brandCar = document.getElementById("marca").value;
     car1.colorCar = document.getElementById("colorCar").value;
-    car1.photoCar = document.getElementById("photoCar").value;
+    car1.photoCar = document.getElementById("photocar").value;
 
     const correctDataCar = validationCar.validationAllAtributes()
 
     correctDataCar == true ? addElementsTable(car1) : alert("Verifique sus datos"); 
     
 });
+
+
+
+
