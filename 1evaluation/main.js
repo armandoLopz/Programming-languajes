@@ -166,10 +166,17 @@ form_car.addEventListener('submit', (event) => {
     car1.yearCar = document.getElementById("yearCar").value;
     car1.brandCar = document.getElementById("marca").value;
     car1.colorCar = document.getElementById("colorCar").value;
-    car1.photoCar = document.getElementById("photocar").value;
+    
+    const fileInput = document.getElementById('filePhoto');
 
+    fileInput.addEventListener('change', function() {
+
+        const selectedFile = this.files[0];
+        car1.photoCar = selectedFile.name;
+        
+    });
+    
     const correctDataCar = validationCar.validationAllAtributes()
-
     correctDataCar == true ? addElementsTable(car1) : alert("Verifique sus datos"); 
     
 });
