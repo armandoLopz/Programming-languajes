@@ -212,3 +212,35 @@ export class validationFormUser {
       return allValid;
     }
   }
+
+export class user {
+
+  constructor(name, lastName, id){
+
+    this.name = name;
+    this.lastName = lastName;
+    this.id = id;
+  }
+}
+
+export class listData {
+
+  constructor(listPerson, setIdCar){
+
+    this.listPerson = listPerson;
+    this.setIdCar = setIdCar;
+  
+  }
+
+  //METHODS
+  
+  addPerson(person1){
+
+    this.listPerson.add(person1);
+  }
+
+  addIdCar(idCar){
+
+    this.setIdCar.add(idCar);
+  }
+}

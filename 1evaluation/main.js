@@ -1,4 +1,4 @@
-import { person, car, validationFormUser,validationFormCar } from './validation.js';
+import { person, car, validationFormUser,validationFormCar, listData } from './validation.js';
 
 const user = new person();
 const car1 = new car();
@@ -6,9 +6,16 @@ const car1 = new car();
 const validationUser = new validationFormUser(user);
 const validationCar = new validationFormCar(car1);
 
+//Prueba
+
+const setPersons = new Set();
+const setIdCars = new Set();
+
+const data = new listData(setPersons, setIdCars);
+
+//
 const form_car = document.getElementById("form2");
 const tableListCars = document.getElementById("inventario");
-
 
 function mostrarFormulario1() {
     
@@ -20,6 +27,7 @@ function mostrarFormulario1() {
 function mostrarFormulario2(ownerCar) {
 
     car1.ownerCar = ownerCar;
+
     document.getElementById('form_car').classList.remove('hidden');
     document.getElementById('form_user').classList.add('hidden');
    
@@ -35,6 +43,15 @@ function showTable() {
 
     document.getElementById('menu').classList.remove('hidden');
     document.getElementById('table').classList.remove('hidden');
+}
+
+function addObjectToSet(car1) {
+    
+    data.addPerson(car1.ownerCar);
+    data.addIdCar(car1.idCar);
+
+    console.log(car1.ownerCar);
+    console.log(car1.idCar);
 }
 
 function addElementsTable(car) {
@@ -177,8 +194,15 @@ form_car.addEventListener('submit', (event) => {
     });
     
     const correctDataCar = validationCar.validationAllAtributes()
-    correctDataCar == true ? addElementsTable(car1) : alert("Verifique sus datos"); 
     
+    correctDataCar === true
+  ? (() => {
+      addElementsTable(car1);
+      addObjectToSet(car1);
+    })()
+  : alert("Verifique sus datos");
+
+         
 });
 
 
