@@ -234,9 +234,10 @@ export class listData {
 
   //METHODS
 
-  addPerson(person1){
+  addPerson([name,lastName,idUser]){
 
-    this.listPerson.add(person1);
+    this.listPerson.add([name,lastName,idUser]);
+    
   }
 
   addIdCar(idCar){

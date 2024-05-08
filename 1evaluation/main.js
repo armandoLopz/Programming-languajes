@@ -48,11 +48,8 @@ function showTable() {
 
 function addObjectToSet(car1) {
     
-    data.addPerson(car1.ownerCar);
+    data.addPerson([car1.ownerCar.name, car1.ownerCar.lastName, car1.ownerCar.idUser]);
     data.addIdCar(car1.idCar);
-
-    console.log(car1.ownerCar);
-    console.log(car1.idCar);
 }
 
 function addElementsTable(car) {
