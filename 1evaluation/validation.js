@@ -233,7 +233,7 @@ export class listData {
   }
 
   //METHODS
-  
+
   addPerson(person1){
 
     this.listPerson.add(person1);
@@ -243,4 +243,22 @@ export class listData {
 
     this.setIdCar.add(idCar);
   }
+}
+
+export class validationListData{
+
+  constructor(listData){
+
+    this.listData = listData;
+  }
+
+  notRepeatIdCar(id){
+    
+    return this.listData.setIdCar.has(id);
+  }
+
+  notRepeatPerson(){
+    
+  }
+  
 }

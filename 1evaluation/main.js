@@ -1,4 +1,4 @@
-import { person, car, validationFormUser,validationFormCar, listData } from './validation.js';
+import { person, car, validationFormUser,validationFormCar, listData, validationListData } from './validation.js';
 
 const user = new person();
 const car1 = new car();
@@ -12,6 +12,7 @@ const setPersons = new Set();
 const setIdCars = new Set();
 
 const data = new listData(setPersons, setIdCars);
+const validationData = new validationListData(data);
 
 //
 const form_car = document.getElementById("form2");
@@ -194,17 +195,11 @@ form_car.addEventListener('submit', (event) => {
     });
     
     const correctDataCar = validationCar.validationAllAtributes()
-    
     correctDataCar === true
   ? (() => {
       addElementsTable(car1);
       addObjectToSet(car1);
+      
     })()
-  : alert("Verifique sus datos");
-
-         
+  : alert("Verifique sus datos");         
 });
-
-
-
-
