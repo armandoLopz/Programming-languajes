@@ -307,3 +307,37 @@ img{
     height: 10px;
     
 }
+.notifications{
+    height: 5rem;
+    width: 15rem;
+    border: 2px;
+    display: flex;
+    text-align: center;
+    gap: 0.7rem;
+    padding: 1rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5%;
+    flex-direction: column;
+
+}
+.salir{
+    width: 2.3rem;
+    margin-left: 42%;
+}
+.imagen{
+    width: 200px;
+    height: 170px;
+}
+.info{
+    padding-bottom: 1rem;
+}
+h4{
+    padding-top: 10px;
+}
+.imagen_tabla{
+    height: 100px;
+    width: 100px;
+}
