@@ -234,9 +234,9 @@ export class listData {
 
   //METHODS
 
-  addPerson([name,lastName,idUser]){
+  addPerson(person){
 
-    this.listPerson.add([name,lastName,idUser]);
+    this.listPerson.add(person);
     
   }
 
@@ -258,8 +258,22 @@ export class validationListData{
     return this.listData.setIdCar.has(id);
   }
 
-  notRepeatPerson(){
-    
+  notRepeatPerson(name, lastName, idUser) {
+      
+    this.listData.listPerson.forEach((person) => {
+      person.idUser === idUser && (person.name !== name || person.lastName !== lastName) ? true: false  
+    });
+  }
+
+  noRepeatData(id, [name,lastName,idUser]){
+
+    const listMethodAtributes = [
+      this.notRepeatIdCar(id),
+      this.notRepeatPerson([name,lastName,idUser])
+    ];
+
+    const allValid = listMethodAtributes.every(method => method);
+    return allValid;
   }
   
 }

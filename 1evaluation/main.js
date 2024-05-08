@@ -48,7 +48,7 @@ function showTable() {
 
 function addObjectToSet(car1) {
     
-    data.addPerson([car1.ownerCar.name, car1.ownerCar.lastName, car1.ownerCar.idUser]);
+    data.addPerson(car1.ownerCar);
     data.addIdCar(car1.idCar);
 }
 
@@ -191,7 +191,13 @@ form_car.addEventListener('submit', (event) => {
         
     });
     
-    const correctDataCar = validationCar.validationAllAtributes()
+    const correctDataCar = validationCar.validationAllAtributes();
+    console.log("REPEAT DATA CAR " + validationData.notRepeatIdCar(car1.idCar));
+
+    console.log("REPEAT DATA USER  " + validationData.notRepeatPerson(car1.ownerCar.name, car1.ownerCar.lastName, car1.ownerCar.idUser));
+    
+    //const repeatData =  validationData.notRepeatIdCar(car1.idCar, [car1.ownerCar.name, car1.ownerCar.lastName, car1.ownerCar.idUser]);
+    //console.log("RESULTADO DE VALIDAR AMBOS METODOS  " + repeatData);
     correctDataCar === true
   ? (() => {
       addElementsTable(car1);
