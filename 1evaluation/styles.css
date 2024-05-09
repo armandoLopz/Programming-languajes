@@ -8,11 +8,13 @@
 
 body, html {
 	height: 100%;
+    max-width: 100%;
 	font-family: Poppins-Regular, sans-serif;
   
-}
+
 .container{ 
-    width: 100%;
+    width:100%;
+    margin: 0 auto;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -341,3 +343,36 @@ h4{
     height: 100px;
     width: 100px;
 }
+@media (max-width:768px) {
+    .container{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+
+    }
+    .menu{
+        margin-top: 0.5rem;
+    }
+    .table{
+       width: 100%;
+    }
+    .custom-table{
+     width: 100%;
+    }
+    .table_container{
+        width: 80%;
+        overflow-x: auto;
+        display: flex;
+        justify-content: center;
+
+    }
+    th,td{
+        height: 10px;
+        width: 1px;
+    }
+    .form_user{
+        margin-top:-150px;
+        height: 100%;
+    }
+}}
