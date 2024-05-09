@@ -105,6 +105,7 @@ function addButtonsTable(fila) {
     readdButton.textContent = 'Ver';
         readdButton.addEventListener('click', () => {
             
+            addTableSee(car1);
             
         
         });
@@ -176,7 +177,6 @@ function filterModels() {
 function addTableSee(car) {
 
     //Datos usuario
-    const infoTable = document.getElementById("completeInfo");
 
     document.getElementById("completeName").textContent = car.ownerCar.name + " " + car.ownerCar.lastName; 
     document.getElementById("idSee").textContent = car.ownerCar.idUser;
@@ -184,14 +184,11 @@ function addTableSee(car) {
     document.getElementById("addressSee").textContent = car.ownerCar.addressUser;
 
     //Datos carro
-
     document.getElementById("idCarSee").textContent = car.idCar; 
     document.getElementById("yearCarSee").textContent = car.yearCar;
     document.getElementById("brandCarSee").textContent = car.brandCar;
     document.getElementById("modelCar").textContent = car.modelCar;
 
-    return infoTable;
-    
 }
 
 function getModelsForBrand(marca) {
