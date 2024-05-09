@@ -62,11 +62,11 @@ function addElementsTable(car) {
     fila.appendChild(celdaIdCar);
     
     const celdaNamesUser = document.createElement('td');
-    celdaNamesUser.textContent = car.ownerCar.name + " " + car.ownerCar.lastName ;
+    celdaNamesUser.textContent = car.ownerCar.name.toUpperCase() + " " + car.ownerCar.lastName.toUpperCase() ;
     fila.appendChild(celdaNamesUser);
 
     const celdaBrandModelCar = document.createElement('td');
-    celdaBrandModelCar.textContent = car.brandCar + " " + car.modelCar;
+    celdaBrandModelCar.textContent = car.brandCar.toUpperCase() + " " + car.modelCar.toUpperCase();
     fila.appendChild(celdaBrandModelCar);
 
     const celdaFoto = document.createElement('td');
@@ -118,7 +118,6 @@ function addButtonsTable(fila) {
         fila.remove();
     
         mostrarFormulario1()
-        mostrarFormulario2(car1.ownerCar)
     
         // Actualizar los datos del formulario de usuario con los datos de la fila seleccionada
         document.getElementById("name").value = car1.ownerCar.name;
@@ -126,6 +125,12 @@ function addButtonsTable(fila) {
         document.getElementById("idUser").value = car1.ownerCar.idUser;
         document.getElementById("phone").value = car1.ownerCar.phoneNumber;
         document.getElementById("address").value = car1.ownerCar.addressUser;
+
+        document.getElementById("idCar").value = car1.idCar ;
+        document.getElementById("yearCar").value = car1.yearCar;
+        document.getElementById("marca").value = car1.brandCar;
+        document.getElementById("modelo").value = car1.modelCar;
+        document.getElementById("colorCar").value = car1.colorCar;
     
         // Actualizar el objeto 'user' con los datos de la fila seleccionada
         user.name = car1.ownerCar.name;
@@ -185,15 +190,18 @@ function addTableSee(car) {
     return infoTable;
     
 }
+
 function getModelsForBrand(marca) {
     const brandModels = new Map([
-        ['toyota', ['Corolla', 'Camry', 'RAV4','Hilux','Fortuner']],
-        ['honda', ['Civic', 'Accord', 'CR-V', 'Brio','HR-V']],
-        
+      ['toyota', ['Corolla', 'Camry', 'RAV4', 'Hilux', 'Fortuner']],
+      ['honda', ['Civic', 'Accord', 'CR-V', 'Brio', 'HR-V']],
+      ['nissan', ['Sentra', 'Versa', 'Rogue', 'Navara', 'Kicks']], 
+      ['ford', ['F-150', 'Escape', 'Mustang', 'Explorer', 'Fiesta']],
+      ['chevrolet', ['Spark', 'Cruze', 'Silverado', 'Tahoe', 'Camaro']]
     ]);
-
+  
     return brandModels.get(marca) || [];
-}
+  }
 
 document.getElementById('add').addEventListener('click',function(){
     event.preventDefault();
@@ -245,7 +253,7 @@ form_car.addEventListener('submit', (event) => {
     const correctDataCar = validationCar.validationAllAtributes();
     console.log("REPEAT DATA CAR " + validationData.notRepeatIdCar(car1.idCar));
 
-    console.log("REPEAT DATA USER  " + validationData.notRepeatPerson(car1.ownerCar.name, car1.ownerCar.lastName, car1.ownerCar.idUser));
+    //console.log("REPEAT DATA USER  " + validationData.notRepeatPerson(car1.ownerCar.name, car1.ownerCar.lastName, car1.ownerCar.idUser));
     
     //const repeatData =  validationData.notRepeatIdCar(car1.idCar, [car1.ownerCar.name, car1.ownerCar.lastName, car1.ownerCar.idUser]);
     //console.log("RESULTADO DE VALIDAR AMBOS METODOS  " + repeatData);
