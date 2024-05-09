@@ -80,6 +80,7 @@ function addElementsTable(car) {
     //Se agregan los botones a la tabla 
     addButtonsTable(fila);
     
+    
     // Agrega la fila a la tabla
     tableListCars.appendChild(fila)
     showTable();
@@ -104,7 +105,8 @@ function addButtonsTable(fila) {
     readdButton.textContent = 'Ver';
 
     readdButton.addEventListener('click', ()=>{
-
+            
+        
         
     });
     celdaActions.appendChild(readdButton);
@@ -112,6 +114,26 @@ function addButtonsTable(fila) {
     const editButton = document.createElement('button');
     editButton.classList.add("actualizar")
     editButton.textContent = 'Actualizar';
+    editButton.addEventListener('click', function() {
+        fila.remove();
+    
+        mostrarFormulario1()
+        mostrarFormulario2(car1.ownerCar)
+    
+        // Actualizar los datos del formulario de usuario con los datos de la fila seleccionada
+        document.getElementById("name").value = car1.ownerCar.name;
+        document.getElementById("lastName").value = car1.ownerCar.lastName;
+        document.getElementById("idUser").value = car1.ownerCar.idUser;
+        document.getElementById("phone").value = car1.ownerCar.phoneNumber;
+        document.getElementById("address").value = car1.ownerCar.addressUser;
+    
+        // Actualizar el objeto 'user' con los datos de la fila seleccionada
+        user.name = car1.ownerCar.name;
+        user.lastName = car1.ownerCar.lastName;
+        user.idUser = car1.ownerCar.idUser;
+        user.phoneNumber = car1.ownerCar.phoneNumber;
+        user.addressUser = car1.ownerCar.addressUser;
+    });
     
 
     celdaActions.appendChild(editButton);
