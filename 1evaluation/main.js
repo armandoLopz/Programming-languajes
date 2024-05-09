@@ -56,17 +56,17 @@ function addElementsTable(car) {
     
     const fila = document.createElement('tr');
     
-    const celdaCedula = document.createElement('td');
-    celdaCedula.textContent = car.idCar;
-    fila.appendChild(celdaCedula);
+    const celdaIdCar = document.createElement('td');
+    celdaIdCar.textContent = car.idCar;
+    fila.appendChild(celdaIdCar);
     
-    const celdaYear = document.createElement('td');
-    celdaYear.textContent = car.yearCar;
-    fila.appendChild(celdaYear);
+    const celdaNamesUser = document.createElement('td');
+    celdaNamesUser.textContent = car.ownerCar.name + " " + car.ownerCar.lastName ;
+    fila.appendChild(celdaNamesUser);
 
-    const celdaModelo = document.createElement('td');
-    celdaModelo.textContent = car.brandCar;
-    fila.appendChild(celdaModelo);
+    const celdaBrandModelCar = document.createElement('td');
+    celdaBrandModelCar.textContent = car.brandCar + " " + car.modelCar;
+    fila.appendChild(celdaBrandModelCar);
 
     const celdaFoto = document.createElement('td');
     celdaFoto.textContent = car.photoCar;
@@ -135,6 +135,22 @@ function filterModels() {
     });
 }
 
+function addTableSee(car) {
+
+    //Datos usuario
+    document.getElementById("completeName").textContent = car.ownerCar.name + " " + car.ownerCar.lastName; 
+    document.getElementById("idSee").textContent = car.ownerCar.idUser;
+    document.getElementById("phoneSee").textContent = car.ownerCar.phoneNumber;
+    document.getElementById("addressSee").textContent = car.ownerCar.addressUser;
+
+    //Datos carro
+
+    document.getElementById("idCarSee").textContent = car.idCar; 
+    document.getElementById("yearCarSee").textContent = car.yearCar;
+    document.getElementById("brandCarSee").textContent = car.brandCar;
+    document.getElementById("modelCar").textContent = car.modelCar;
+    
+}
 function getModelsForBrand(marca) {
     const brandModels = new Map([
         ['toyota', ['Corolla', 'Camry', 'RAV4','Hilux','Fortuner']],
@@ -180,6 +196,7 @@ form_car.addEventListener('submit', (event) => {
     car1.idCar = document.getElementById("idCar").value;
     car1.yearCar = document.getElementById("yearCar").value;
     car1.brandCar = document.getElementById("marca").value;
+    car1.modelCar = document.getElementById("modelo").value;
     car1.colorCar = document.getElementById("colorCar").value;
     
     const fileInput = document.getElementById('filePhoto');
@@ -202,6 +219,7 @@ form_car.addEventListener('submit', (event) => {
   ? (() => {
       addElementsTable(car1);
       addObjectToSet(car1);
+      addTableSee(car1)
       
     })()
   : alert("Verifique sus datos");         

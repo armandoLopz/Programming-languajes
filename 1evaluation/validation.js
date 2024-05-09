@@ -64,11 +64,12 @@ export class person{
 
 export class car{
 
-  constructor( idCar, yearCar,brandCar,colorCar,photoCar,ownerCar){
+  constructor( idCar, yearCar,brandCar, modelCar, colorCar,photoCar,ownerCar){
 
     this.idCar = idCar;
     this.yearCar = yearCar;
     this.brandCar = brandCar;
+    this.modelCar = modelCar;
     this.colorCar = colorCar;
     this.photoCar = photoCar;
     this.ownerCar = ownerCar
