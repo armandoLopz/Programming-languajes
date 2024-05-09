@@ -106,7 +106,17 @@ function addButtonsTable(fila) {
         readdButton.addEventListener('click', () => {
             
             addTableSee(car1);
+            document.querySelector('.informacion').classList.remove('hidden');
+            document.getElementById('menu').classList.add('hidden');
+            document.getElementById('table').classList.add('hidden');
             
+            document.getElementById('exit_user').addEventListener('click',() =>{
+                document.querySelector('.informacion').classList.add('hidden');
+                document.getElementById('menu').classList.remove('hidden');
+                document.getElementById('table').classList.remove('hidden');
+            
+            })
+           
         
         });
         
