@@ -349,6 +349,7 @@ h4{
         align-items: center;
         gap: 2rem;
         width: 100%;
+        flex-direction: column;
 
     }
     .menu{
@@ -367,11 +368,18 @@ h4{
         justify-content: center;
 
     }
-    th,td{
-        height: 10px;
-        width: 1px;
-    }
-    .form_user{
+ .custom-table tbody th, .custom-table tbody td {
+
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+    padding: 5px;
+    width: 50px;
+}
+tr{
+    height: 5px;
+}
+
+
+  .form_user{
         margin-top:-150px;
         height: 100%;
     }

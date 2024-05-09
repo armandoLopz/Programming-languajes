@@ -103,12 +103,15 @@ function addButtonsTable(fila) {
     const readdButton = document.createElement('button');
     readdButton.classList.add("leer");
     readdButton.textContent = 'Ver';
-
-    readdButton.addEventListener('click', ()=>{
+        readdButton.addEventListener('click', () => {
+            
+            
+        
+        });
+        
             
         
         
-    });
     celdaActions.appendChild(readdButton);
 
     const editButton = document.createElement('button');
