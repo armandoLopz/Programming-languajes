@@ -6,6 +6,7 @@ const car1 = new car();
 const validationUser = new validationFormUser(user);
 const validationCar = new validationFormCar(car1);
 
+const listFilaData = [];
 //Prueba
 
 const setPersons = new Set();
@@ -78,7 +79,7 @@ function addElementsTable(car) {
 
     //Se agregan los botones a la tabla 
     addButtonsTable(fila);
-
+    
     // Agrega la fila a la tabla
     tableListCars.appendChild(fila)
     showTable();
@@ -92,6 +93,7 @@ function addButtonsTable(fila) {
     deleteButton.classList.add("eliminar");
     deleteButton.textContent = 'Eliminar';
     deleteButton.addEventListener('click', function() {
+
         this.parentElement.parentElement.remove(); 
       });
 
@@ -100,6 +102,11 @@ function addButtonsTable(fila) {
     const readdButton = document.createElement('button');
     readdButton.classList.add("leer");
     readdButton.textContent = 'Ver';
+
+    readdButton.addEventListener('click', ()=>{
+
+        
+    });
     celdaActions.appendChild(readdButton);
 
     const editButton = document.createElement('button');
@@ -112,6 +119,7 @@ function addButtonsTable(fila) {
     fila.appendChild(celdaActions);
    
 }
+
 
 function regresar() {
     
@@ -138,6 +146,8 @@ function filterModels() {
 function addTableSee(car) {
 
     //Datos usuario
+    const infoTable = document.getElementById("completeInfo");
+
     document.getElementById("completeName").textContent = car.ownerCar.name + " " + car.ownerCar.lastName; 
     document.getElementById("idSee").textContent = car.ownerCar.idUser;
     document.getElementById("phoneSee").textContent = car.ownerCar.phoneNumber;
@@ -149,6 +159,8 @@ function addTableSee(car) {
     document.getElementById("yearCarSee").textContent = car.yearCar;
     document.getElementById("brandCarSee").textContent = car.brandCar;
     document.getElementById("modelCar").textContent = car.modelCar;
+
+    return infoTable;
     
 }
 function getModelsForBrand(marca) {
