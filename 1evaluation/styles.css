@@ -130,7 +130,7 @@ input{
     width: 72%;
     border-bottom: 1px solid black;
     transition: all 0.3s;
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 1rem;
 
     }
@@ -359,11 +359,11 @@ h4{
        width: 100%;
     }
     .custom-table{
-     width: 100%;
+     min-width: 700px;
      overflow-x: auto;
     }
     .table_container{
-        width: 80%;
+        width: 90%;
         overflow-x: auto;
         display: flex;
         justify-content: center;
@@ -371,7 +371,7 @@ h4{
     }
  .custom-table tbody th, .custom-table tbody td {
 
-  font-size: 12px; /* Tamaño de fuente más pequeño */
+  font-size: 15px; /* Tamaño de fuente más pequeño */
     padding: 5px;
     width: 50px;
 }
@@ -381,7 +381,12 @@ tr{
 
 
   .form_user{
-        margin-top:-150px;
-        height: 100%;
+        margin-top:-10px;
+        
     }
 }}
+
+#folderImages{
+
+    display: none;
+}

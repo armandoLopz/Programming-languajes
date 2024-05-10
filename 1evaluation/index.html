@@ -86,6 +86,9 @@
                 <option value="entry"></option>
                 <option value="toyota">Toyota</option>
                 <option value="honda">Honda</option>
+                <option value="nissan">Nissan</option>
+                <option value="ford">Ford</option>
+                <option value="chevrolet">chevrolet</option>
                 
             </select>
 
@@ -104,7 +107,7 @@
         <label for="" class="fotol">Foto del vehiculo</label>
        <!-- <button id="buscarButton">Buscar</button>
        <img id="imageDisplay " src class="image_car">-->
-       <input type="file" id="filePhoto" accept="image/jpeg, image/png, image/jpg">
+       <input type="file" id="filePhoto" accept="image/jpeg, image/png, image/jpg" required>
         
 
           </div>
@@ -120,33 +123,56 @@
    <div class="informacion hidden">
    <div id="completeInfo" class="information">
     <div class="user ">
-     <img src="imagenes/corolla2022.jpg" alt="" class="imagen">
+     <img src="" alt="" class="imagen" id="imageSee">
     <h2 class="info">Informacion del usuario</h2>
     <label for="">Nombre completo: </label>
-    <h4 id="completeName">   </h4> <br> <br>
+    <h4 id="completeName">   </h4> <br> 
     <label for="">Cedula: </label>
-    <h4 id="idSee">  </h4> <br> <br>
+    <h4 id="idSee">  </h4> <br> 
     <label for="">Numero de telefono </label>
-    <h4 id="phoneSee">  </h4> <br> <br>
+    <h4 id="phoneSee">  </h4> <br>
     <label for="">Ubicacion: </label>
-    <h4 id="addressSee">  </h4> <br> <br>
+    <h4 id="addressSee">  </h4> <br>
     </div>
   <div class="car">
     <h2 class="info">Informacion del Vehiculo</h2>  
     <img src="" alt="">
     <label for="">Placa: </label>
-    <h4 id="idCarSee">  </h4> <br> <br>
+    <h4 id="idCarSee">  </h4> <br>
     <label for="">año del vehiculo: </label>
-    <h4 id="yearCarSee">  </h4> <br> <br>
+    <h4 id="yearCarSee">  </h4> <br>
     <label for="">Marca del Vehiculo </label>
-    <h4 id="brandCarSee"> </h4> <br> <br>
+    <h4 id="brandCarSee"> </h4> <br>
     <label for="">Modelo del vehiculo: </label>
-    <h4 id="modelCarSee"> </h4> <br> <br>
+    <h4 id="modelCarSee"> </h4> <br>
 
     <button class="boton" id="exit_user">Salir</button>
   </div>
   
  </div>
+</div>
+
+<div id="folderImages">
+    <img src="imagenes/toyota/corolla2022.jpg" alt="" id="corollaPhoto" class="imagen">
+    <img src="imagenes/toyota/camry2029.jpg" alt="" id="camryPhoto" class="imagen">
+    <img src="imagenes/toyota/rav42019.jpeg" alt="" id="rav4Photo" class="imagen">
+
+    <img src="imagenes/honda/accord2019.jpeg" alt="" id="accordPhoto" class="imagen">
+    <img src="imagenes/honda/crv2015.jpeg" alt="" id="crvPhoto" class="imagen">
+    <img src="imagenes/honda/hondacivic2017.jpeg" alt="" id="civicPhoto" class="imagen">
+
+    <img src="imagenes/chevrolet/spark.jpeg" alt="" id="sparkPhoto" class="imagen">
+    <img src="imagenes/chevrolet/cruze.jpeg" alt="" id="cruzePhoto" class="imagen">
+    <img src="imagenes/chevrolet/2024-chevrolet-silverado-1500-high-country-102-642dbddbe725d.jpg" alt="" id="silveradoPhoto" class="imagen">
+
+    <img src="imagenes/ford/escape.jpeg" alt="" id="escapePhoto" class="imagen">
+    <img src="imagenes/ford/f150.jpeg" alt="" id="f150Photo" class="imagen">
+    <img src="imagenes/ford/mustang.jpeg" alt="" id="mustangPhoto" class="imagen">
+
+    <img src="imagenes/nissan/nissan-sentra.jpg" alt="" id="sentraPhoto" class="imagen">
+    <img src="imagenes/nissan/nissan-versa-sr-4.jpg" alt="" id="versaPhoto" class="imagen">
+    <img src="imagenes/nissan/rogue.jpeg" alt="" id="roguePhoto" class="imagen">
+
 </div>
 <div class="error hidden" id="errores">
 <div class="notifications hidden">
