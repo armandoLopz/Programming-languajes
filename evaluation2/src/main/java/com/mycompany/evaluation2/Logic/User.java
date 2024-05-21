@@ -13,8 +13,13 @@ public class User extends person{
     public User() {
     }
 
-    public User(String name, String lastname, String id) {
+    public User(String name, String lastname, String id,String address, String phoneNumber, ArrayList<Vehicle> buyVehicleList, ArrayList<Vehicle> rentVehiclesList ){
         super(name, lastname, id);
+
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.buyVehicleList = buyVehicleList;
+        this.rentVehicleList = rentVehiclesList;
     }
 
     public String getAddress() {
