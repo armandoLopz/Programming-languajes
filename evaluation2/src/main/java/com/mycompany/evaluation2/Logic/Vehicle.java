@@ -10,7 +10,7 @@ public abstract class Vehicle {
 
     private String name, brand;
     private Date year;
-    private enum typeCar {
+    protected enum typeCar {
         
         CARRO, CAMIONETA,MOTO
     }

@@ -4,6 +4,8 @@
 
 package com.mycompany.evaluation2;
 
+import com.mycompany.evaluation2.IGU.MainWindow;
+
 /**
  *
  * @author Lenovo
@@ -11,6 +13,8 @@ package com.mycompany.evaluation2;
 public class Evaluation2 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        MainWindow mainInterface = new MainWindow();
+        mainInterface.setVisible(true);
+        mainInterface.setLocationRelativeTo(null);
     }
 }
