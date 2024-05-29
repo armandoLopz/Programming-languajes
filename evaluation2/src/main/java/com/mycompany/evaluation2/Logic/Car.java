@@ -14,9 +14,9 @@ public class Car extends Vehicle{
         
     }
     
-    public Car(String name, String brand, Date year, String model, String typeVehicle, User owner){
+    public Car(String name, String brand, String id, Date year, String model, String typeVehicle, User owner){
         
-        super(name,brand,year);
+        super(name,brand,id,year);
         
         this.owner = owner;
         this.model = model;

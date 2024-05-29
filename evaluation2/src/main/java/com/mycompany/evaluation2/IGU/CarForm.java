@@ -4,17 +4,22 @@
  */
 package com.mycompany.evaluation2.IGU;
 
+import com.mycompany.evaluation2.Logic.User;
+
 /**
  *
  * @author Pedro Gonzalez
  */
-public class carselljpanel extends javax.swing.JPanel {
+public class CarForm extends javax.swing.JPanel{
 
     /**
      * Creates new form carselljpanel
+     * @param user
      */
-    public carselljpanel() {
+    public CarForm(User user) {
+
         initComponents();
+        
     }
 
     /**
@@ -49,7 +54,7 @@ public class carselljpanel extends javax.swing.JPanel {
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel2.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
-        jLabel2.setText("Venta del vehiculo");
+        jLabel2.setText("Registro del vehiculo");
 
         text_placa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         text_placa.addActionListener(new java.awt.event.ActionListener() {

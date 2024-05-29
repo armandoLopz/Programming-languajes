@@ -8,7 +8,7 @@ import java.util.Date;
 
 public abstract class Vehicle {
 
-    private String name, brand;
+    private String name, brand, id;
     private Date year;
     protected enum typeCar {
         
@@ -18,11 +18,14 @@ public abstract class Vehicle {
     public Vehicle() {
     }
 
-    public Vehicle(String name, String brand, Date year) {
+    public Vehicle(String name, String brand, String id, Date year) {
         this.name = name;
         this.brand = brand;
+        this.id = id;
         this.year = year;
     }
+
+
 
     @Override
     public String toString() {
@@ -52,6 +55,14 @@ public abstract class Vehicle {
 
     public void setYear(Date year) {
         this.year = year;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
     
     

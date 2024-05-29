@@ -14,9 +14,9 @@ public class Motorcycle extends Vehicle{
         
     }
     
-    public Motorcycle(String name, String brand, Date year, String model, String typeVehicle, User owner){
+    public Motorcycle(String name, String brand, Date year, String id, String model, String typeVehicle, User owner){
         
-        super(name,brand,year);
+        super(name,brand,id,year);
         
         this.owner = owner;
         this.model = model;

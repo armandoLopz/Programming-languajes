@@ -14,6 +14,8 @@ public class Evaluation2 {
 
     public static void main(String[] args) {
         MainWindow mainInterface = new MainWindow();
+        
+        //Main mainInterface = new Main();
         mainInterface.setVisible(true);
         mainInterface.setLocationRelativeTo(null);
     }

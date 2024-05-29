@@ -6,12 +6,13 @@ package com.mycompany.evaluation2.Logic;
 
 public abstract class person {
 
-    private String name,lastname,id;
+    private String name,lastname;
+    private int id;
 
     public person() {
     }
 
-    public person(String name, String lastname, String id) {
+    public person(String name, String lastname, int id) {
         this.name = name;
         this.lastname = lastname;
         this.id = id;
@@ -21,8 +22,7 @@ public abstract class person {
     public String toString() {
         return "person{" + "name=" + name + ", lastname=" + lastname + ", id=" + id + '}';
     }
-    
-    
+
     public String getName() {
         return name;
     }
@@ -39,13 +39,15 @@ public abstract class person {
         this.lastname = lastname;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
+    
+   
     
     
 }
