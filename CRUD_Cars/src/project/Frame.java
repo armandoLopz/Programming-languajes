@@ -15,7 +15,7 @@ public class Frame extends JFrame {
     public Frame() throws IOException {
     
         super.setTitle("  AutoManagement");
-        super.setIconImage(ImageIO.read(new File("src/images/FrameIcon.png")));
+        //super.setIconImage(ImageIO.read(new File("src/images/FrameIcon.png")));
         super.setSize(800, 610);
         super.setResizable(false);
         super.setLocationRelativeTo(null);
