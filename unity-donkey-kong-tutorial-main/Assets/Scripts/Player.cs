@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     public float moveSpeed = 3f;
     public float jumpStrength = 4f;
-
+    private bool isOnStairs = false;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     {
         grounded = false;
         climbing = false;
+        isOnStairs = false;
 
         // the amount that two colliders can overlap
         // increase this value for steeper platforms
@@ -72,6 +73,7 @@ public class Player : MonoBehaviour
             else if (hit.layer == LayerMask.NameToLayer("Ladder"))
             {
                 climbing = true;
+                isOnStairs = true;
             }
         }
     }
@@ -80,11 +82,19 @@ public class Player : MonoBehaviour
     {
         if (climbing) {
             direction.y = Input.GetAxis("Vertical") * moveSpeed;
+
         } else if (grounded && Input.GetButtonDown("Jump")) {
             direction = Vector2.up * jumpStrength;
         } else {
-            direction += Physics2D.gravity * Time.deltaTime;
-        }
+            if (Input.GetAxis("Vertical") < 0 && isOnStairs) {
+                direction.y = -moveSpeed; 
+                Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Ground"), true);
+            } else {
+                // Stop ignoring ground collision when not descending stairs
+                Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Ground"), false);
+                direction += Physics2D.gravity * Time.deltaTime;
+            }
+    }
 
         direction.x = Input.GetAxis("Horizontal") * moveSpeed;
 
@@ -127,6 +137,12 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
+        {
+            isOnStairs = false; // Reset isOnStairs when leaving stairs
+        }
+
         if (collision.gameObject.CompareTag("Objective"))
         {
             enabled = false;

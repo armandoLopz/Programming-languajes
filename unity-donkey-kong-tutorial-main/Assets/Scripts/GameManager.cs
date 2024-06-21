@@ -27,8 +27,6 @@ public class GameManager : MonoBehaviour
 
         Camera camera = Camera.main;
 
-        // Don't render anything while loading the next scene to create
-        // a simple scene transition effect
         if (camera != null) {
             camera.cullingMask = 0;
         }
@@ -52,7 +50,7 @@ public class GameManager : MonoBehaviour
         } else {
             LoadLevel(1);
         }
-    }
+    } 
 
     public void LevelFailed()
     {
