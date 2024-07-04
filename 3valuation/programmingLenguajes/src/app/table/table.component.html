@@ -1,0 +1,15 @@
+<table datatable class="row-border hover">
+
+    <tr>
+        <th>Autores</th>
+        <th>Titulos</th>
+        <th>Acciones</th>
+    </tr>
+
+    <tr *ngFor="let book of data">
+
+        <td>{{book.authors[0].name}}</td>
+        <td>{{book.title}}</td>
+    </tr>
+    
+</table>
