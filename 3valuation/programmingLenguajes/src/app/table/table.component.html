@@ -3,6 +3,8 @@
     <tr>
         <th>Autores</th>
         <th>Titulos</th>
+        <th>Año de nacimiento</th>
+        <th>Año de muerte</th>
         <th>Acciones</th>
     </tr>
 
@@ -10,6 +12,9 @@
 
         <td>{{book.authors[0].name}}</td>
         <td>{{book.title}}</td>
+        <td>{{book.authors[0].birth_year}}</td>
+        <td>{{book.authors[0].death_year}}</td>
+        
         <td>
             <app-delete-button/>
             <app-dowloand-button/> <br>

@@ -1,0 +1,14 @@
+<div>
+    <h2>Filtrar tabla: </h2>
+    
+    <h3>Año de nacimiento: </h3> 
+    <input type="number" min="0" [(ngModel)]="birthYear"> <br>
+
+    <h3>Año de Muerte: </h3> 
+    <input type="number" min="0" [(ngModel)]="deathYear">
+    
+    <br> <br>
+    <app-filter-button (filterClicked)="onFilterClicked()"></app-filter-button>
+    
+</div>
+
