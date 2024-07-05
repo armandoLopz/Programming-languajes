@@ -6,7 +6,7 @@ import { DataTablesModule } from "angular-datatables";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TableComponent,DataTablesModule],
+  imports: [RouterOutlet, TableComponent, DataTablesModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

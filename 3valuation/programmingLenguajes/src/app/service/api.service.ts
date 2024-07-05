@@ -10,7 +10,7 @@ export class ApiService {
   private url = "https://gutendex.com/books/";
   constructor(private http: HttpClient) { }
 
-  public getData(): Observable<any>{
-    return this.http.get<any>(this.url);
+  public getData(): Observable<Book>{
+    return this.http.get<Book>(this.url);
   }
 }
