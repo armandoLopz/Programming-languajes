@@ -11,7 +11,6 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   public getData(): Observable<Book>{
-    
     return this.http.get<Book>(this.url);
   }
 }

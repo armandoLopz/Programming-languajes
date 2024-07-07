@@ -5,6 +5,7 @@ import { DowloandButtonComponent } from '../buttons/dowloand-button/dowloand-but
 import { SeeButtonComponent } from '../buttons/see-button/see-button.component';
 import { EditButtonComponent } from '../buttons/edit-button/edit-button.component';
 import { DeleteButtonComponent } from '../buttons/delete-button/delete-button.component';
+import { Result } from '../models/book.models';
 
 @Component({
   selector: 'app-table',
@@ -15,7 +16,7 @@ import { DeleteButtonComponent } from '../buttons/delete-button/delete-button.co
 })
 export class TableComponent implements OnInit{
 
-  data: any[] = []; 
+  data: Result[] = []; 
 
   constructor(private apiService: ApiService) { }
 
@@ -23,12 +24,14 @@ export class TableComponent implements OnInit{
     this.getData();
   }
 
-  getData(){
+  getData(): Result[]{
 
     this.apiService.getData().subscribe(data => {
 
-      this.data = data.results;
+      return this.data = data.results;
 
     })
+
+    return this.data;
   }
 }

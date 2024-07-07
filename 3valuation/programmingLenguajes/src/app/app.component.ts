@@ -7,7 +7,7 @@ import { FilterInterfaceComponent } from './filter-interface/filter-interface.co
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TableComponent, DataTablesModule, FilterInterfaceComponent],
+  imports: [RouterOutlet, FilterInterfaceComponent, TableComponent, DataTablesModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
