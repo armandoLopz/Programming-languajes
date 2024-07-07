@@ -1,3 +1,5 @@
+<app-filter-interface (filteredDataEmitted)="filteredDataReceived($event)"></app-filter-interface> <br> <br>
+
 <table datatable class="row-border hover">
 
     <tr>
@@ -8,7 +10,7 @@
         <th>Acciones</th>
     </tr>
 
-    <tr *ngFor="let book of data">
+    <tr  *ngFor="let book of data">
 
         <td>{{book.authors[0].name}}</td>
         <td>{{book.title}}</td>

@@ -6,32 +6,39 @@ import { SeeButtonComponent } from '../buttons/see-button/see-button.component';
 import { EditButtonComponent } from '../buttons/edit-button/edit-button.component';
 import { DeleteButtonComponent } from '../buttons/delete-button/delete-button.component';
 import { Result } from '../models/book.models';
+import { FilterInterfaceComponent } from '../filter-interface/filter-interface.component';
 
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [NgFor, DowloandButtonComponent,SeeButtonComponent,EditButtonComponent,DeleteButtonComponent],
+  imports: [NgFor, DowloandButtonComponent,SeeButtonComponent,EditButtonComponent,DeleteButtonComponent,FilterInterfaceComponent],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
 export class TableComponent implements OnInit{
 
   data: Result[] = []; 
+  filteredData: Result[] = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
     this.getData();
   }
 
-  getData(): Result[]{
+  getData(){
 
     this.apiService.getData().subscribe(data => {
 
-      return this.data = data.results;
+      this.data = data.results;
 
     })
-
-    return this.data;
+  }
+  
+  filteredDataReceived(filteredData: Result[]) {
+    
+    this.data = filteredData;
+    console.log(this.data);
+    
   }
 }
