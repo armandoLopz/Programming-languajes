@@ -14,5 +14,7 @@ th{
     top: 0;
     border: 2px solid;
     margin-bottom: 2px;
+    background-color: white;
+    color: black;
 }
 
