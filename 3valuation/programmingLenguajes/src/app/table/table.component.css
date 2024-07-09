@@ -3,3 +3,16 @@ table, tr, td{
     border: 1.5px solid;
     
 }
+
+div{
+
+    overflow-y: scroll;
+}
+th{
+
+    position: sticky;
+    top: 0;
+    border: 2px solid;
+    margin-bottom: 2px;
+}
+

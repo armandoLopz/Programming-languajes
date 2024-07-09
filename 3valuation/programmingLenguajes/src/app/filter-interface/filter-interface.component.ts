@@ -35,7 +35,6 @@ export class FilterInterfaceComponent {
 
       this.dataBook = data.results;
 
-
     })
   }
   

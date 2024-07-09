@@ -18,7 +18,6 @@ import { FilterInterfaceComponent } from '../filter-interface/filter-interface.c
 export class TableComponent implements OnInit{
 
   data: Result[] = []; 
-  filteredData: Result[] = [];
 
   constructor(private apiService: ApiService) {}
 
@@ -38,7 +37,5 @@ export class TableComponent implements OnInit{
   filteredDataReceived(filteredData: Result[]) {
     
     this.data = filteredData;
-    console.log(this.data);
-    
   }
 }

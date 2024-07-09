@@ -1,29 +1,40 @@
 <app-filter-interface (filteredDataEmitted)="filteredDataReceived($event)"></app-filter-interface> <br> <br>
 
-<table datatable class="row-border hover" >
+<div id="tableContent" >
 
-    <tr>
-        <th>Autores</th>
-        <th>Titulos</th>
-        <th>Año de nacimiento</th>
-        <th>Año de muerte</th>
-        <th>Acciones</th>
-    </tr>
-
-    <tr  *ngFor="let book of data">
-
-        <td>{{book.authors[0].name}}</td>
-        <td>{{book.title}}</td>
-        <td>{{book.authors[0].birth_year}}</td>
-        <td>{{book.authors[0].death_year}}</td>
+    <table datatable class="row-border hover" >
         
-        <td>
-            <app-delete-button/>
-            <app-dowloand-button/> <br>
-            
-            <app-edit-button/>
-            <app-see-button/>
-        </td>
-    </tr>
+        <thead>
+
+            <tr>
+                <th>Autores</th>
+                <th>Titulos</th>
+                <th>Año de nacimiento</th>
+                <th>Año de muerte</th>
+                <th>Acciones</th>
+            </tr>
+
+        </thead>
+        
+        <tbody>
+            <tr  *ngFor="let book of data" >
+        
+                <td>{{book.authors[0].name}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.authors[0].birth_year}}</td>
+                <td>{{book.authors[0].death_year}}</td>
+                
+                <td>
+                    <app-delete-button/>
+                    <app-dowloand-button/> <br>
+                    
+                    <app-edit-button/>
+                    <app-see-button/>
+                </td>
+            </tr>
+
+        </tbody>
     
-</table>
+    </table>
+    
+</div>

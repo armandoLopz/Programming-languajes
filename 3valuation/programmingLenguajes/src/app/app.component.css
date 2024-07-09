@@ -65,7 +65,6 @@ img {
     flex-direction: row;
     gap: 1rem;
     max-width: 100%;
-    overflow-y:scroll;
     height: 30rem;
 
 }
