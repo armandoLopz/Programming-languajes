@@ -6,9 +6,9 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-see-button',
+  templateUrl: './see-button.component.html',
   standalone: true,
   imports: [MatButtonModule, CommonModule],
-  template: `<button mat-button (click)="openDialog()">Ver</button>`,
   styleUrl: './see-button.component.css'
 })
 export class SeeButtonComponent {

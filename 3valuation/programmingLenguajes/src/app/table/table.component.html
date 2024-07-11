@@ -20,14 +20,14 @@
             <tr  *ngFor="let book of data" >
         
                 <td>{{book.authors[0].name}}</td>
-                <td>{{book.title}}</td>
+                <td id="title">{{book.title}}</td>
                 <td>{{book.authors[0].birth_year}}</td>
                 <td>{{book.authors[0].death_year}}</td>
                 
                 
                 <td>
                     <app-delete-button/>
-                    <app-dowloand-button  [book]="book"/><br>
+                    <app-dowloand-button [book]="book"/><br>
                     <app-edit-button/>
                     <app-see-button [book]="book"></app-see-button>
                     

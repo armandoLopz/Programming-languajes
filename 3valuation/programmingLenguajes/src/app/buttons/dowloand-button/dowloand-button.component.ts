@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-dowloand-button',
-  template: `<button mat-button (click)="downloadZip(book)">Descargar</button>`,
+  templateUrl: './dowloand-button.component.html',
   standalone: true,
   imports: [MatButtonModule, CommonModule],
   styleUrl: './dowloand-button.component.css'
