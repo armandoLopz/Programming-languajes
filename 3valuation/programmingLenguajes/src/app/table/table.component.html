@@ -1,6 +1,6 @@
 <app-filter-interface (filteredDataEmitted)="filteredDataReceived($event)"></app-filter-interface> <br> <br>
 
-<div id="tableContent" >
+<div id="tableContent" class="contenido" >
 
     <table datatable class="row-border hover" >
         
@@ -24,12 +24,13 @@
                 <td>{{book.authors[0].birth_year}}</td>
                 <td>{{book.authors[0].death_year}}</td>
                 
+                
                 <td>
                     <app-delete-button/>
-                    <app-dowloand-button/> <br>
-                    
+                    <app-dowloand-button  [book]="book"/><br>
                     <app-edit-button/>
-                    <app-see-button/>
+                    <app-see-button [book]="book"></app-see-button>
+                    
                 </td>
             </tr>
 

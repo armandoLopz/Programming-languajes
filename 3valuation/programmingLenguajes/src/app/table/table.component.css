@@ -6,7 +6,8 @@ table, tr, td{
 
 div{
 
-    overflow-y: scroll;
+    overflow-y: auto;
+   
 }
 th{
 
@@ -16,5 +17,11 @@ th{
     margin-bottom: 2px;
     background-color: white;
     color: black;
+}
+.contenido{
+   text-align: center;
+}
+.ocultar{
+    display: none;
 }
 
