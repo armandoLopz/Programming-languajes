@@ -17,7 +17,7 @@
         </thead>
         
         <tbody>
-            <tr  *ngFor="let book of data" >
+            <tr  *ngFor="let book of data ; let i = index" >
         
                 <td>{{book.authors[0].name}}</td>
                 <td id="title">{{book.title}}</td>
@@ -26,7 +26,7 @@
                 
                 
                 <td>
-                    <app-delete-button/>
+                    <app-delete-button [index]="i" (delete)="deleteRow($event)"/>
                     <app-dowloand-button [book]="book"/><br>
                     <app-edit-button/>
                     <app-see-button [book]="book"></app-see-button>

@@ -38,5 +38,8 @@ export class TableComponent implements OnInit{
     
     this.data = filteredData;
   }
+  deleteRow(index: number) {
+    this.data.splice(index, 1);
+  }
 }
 
