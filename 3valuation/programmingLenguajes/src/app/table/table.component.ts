@@ -8,6 +8,8 @@ import { DeleteButtonComponent } from '../buttons/delete-button/delete-button.co
 import { Result } from '../models/book.models';
 import { FilterInterfaceComponent } from '../filter-interface/filter-interface.component';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { EditDialogComponent } from '../buttons/edit-button/edit-dialog/edit-dialog.component';
 @Component({
   selector: 'app-table',
   standalone: true,
@@ -19,7 +21,7 @@ export class TableComponent implements OnInit{
 
   data: Result[] = []; 
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService,public dialog: MatDialog) {}
 
   ngOnInit() {
     this.getData();
@@ -41,5 +43,13 @@ export class TableComponent implements OnInit{
   deleteRow(index: number) {
     this.data.splice(index, 1);
   }
+  addNewElement(newBook: Result) {
+    this.data.push(newBook);
+  }
+  
+  editElement(index: number, element: Result) {
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+      data: { ...element }
+    });
 }
-
+}

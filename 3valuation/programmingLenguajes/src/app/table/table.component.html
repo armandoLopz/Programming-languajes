@@ -1,4 +1,4 @@
-<app-filter-interface (filteredDataEmitted)="filteredDataReceived($event)"></app-filter-interface> <br> <br>
+<app-filter-interface (filteredDataEmitted)="filteredDataReceived($event)" (newElementAdded)="addNewElement($event)" class="filter-interface"></app-filter-interface> <br> <br>
 
 <div id="tableContent" class="contenido" >
 
@@ -17,7 +17,7 @@
         </thead>
         
         <tbody>
-            <tr  *ngFor="let book of data ; let i = index" >
+            <tr  *ngFor="let book of data ; let i = index;let item of data" >
         
                 <td>{{book.authors[0].name}}</td>
                 <td id="title">{{book.title}}</td>
@@ -25,10 +25,11 @@
                 <td>{{book.authors[0].death_year}}</td>
                 
                 
+                
                 <td>
                     <app-delete-button [index]="i" (delete)="deleteRow($event)"/>
                     <app-dowloand-button [book]="book"/><br>
-                    <app-edit-button/>
+                    <app-edit-button mat-button (click)="editElement(i, item)"/>
                     <app-see-button [book]="book"></app-see-button>
                     
                 </td>
