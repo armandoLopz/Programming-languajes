@@ -5,9 +5,9 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-delete-button',
-  template: `<button mat-button (click)="onDelete()">Eliminar</button>`,
   standalone: true,
   imports: [MatButtonModule, CommonModule],
+  templateUrl:'./delete-button.component.html',
   styleUrl: './delete-button.component.css'
 })
 export class DeleteButtonComponent {
