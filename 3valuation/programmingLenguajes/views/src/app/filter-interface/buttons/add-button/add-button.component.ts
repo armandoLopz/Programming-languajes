@@ -5,7 +5,7 @@ import { Result } from '../../../models/book.models';
 
 @Component({
   selector: 'app-add-button',
-  template: `<button mat-button (click)="openAddDialog()">Agregar</button>`,
+  templateUrl: './add-button.component.html',
   standalone: true,
   styleUrl:'./add-button.component.css'
   

@@ -10,24 +10,12 @@ div{
     align-items: center;
 }
 app-add-button{
-    gap: 3rem;
-    margin-top: 3rem;
-   
 
+    margin-bottom: 2rem;
 }
-.boton {
-    background-color: #007bff ;
-    color: white ;
-    padding: 10px 20px ;
-    border-radius: 4px ;
-    font-size: 16px 
-  }
-  
-  .boton:hover {
-    background-color: #0056b3 !important;
-  }
-  
-button{
-    border: none;
-    background-color: #007bff !important;
+
+
+#addContent h2{
+
+    margin-top: 5rem;
 }
