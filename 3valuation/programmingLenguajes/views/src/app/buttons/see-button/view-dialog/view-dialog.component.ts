@@ -11,12 +11,12 @@ import { CommonModule } from '@angular/common';
     <h1 mat-dialog-title>{{ data.title }}</h1>
     <div mat-dialog-content>
       <p>Identificacion del libro {{data.id}}</p>
-      <p>Autor: {{ data.authors[0].name }}</p>
-      <p>Fecha de Nacimiento: {{ data.authors[0].birth_year }}</p>
-      <p>Fecha de Muerte: {{  data.authors[0].death_year }}</p>
-      <p>Genero: {{data.subjects}}</p>
-      <p>Lenguaje:{{data.languages}}</p>
-      <p>Descargas:{{data.download_count}}</p>
+      <p>Autor: {{ data.author }}</p>
+      <p>Fecha de Nacimiento: {{ data.bornDay }}</p>
+      <p>Fecha de Muerte: {{  data.deathDate }}</p>
+      <p>Genero: {{data.genre}}</p>
+      <p>Lenguaje:{{data.languajes}}</p>
+      <p>Descargas:{{data.downloads}}</p>
     </div>
     <div mat-dialog-actions>
       <button mat-button mat-dialog-close>Cerrar</button>

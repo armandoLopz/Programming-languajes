@@ -7,8 +7,8 @@ import { Book } from '../models/booksLaravel.models';
 })
 export class ApiService {
 
-  private url = "http://127.0.0.1:8000/books";
-  constructor(private http: HttpClient) { }
+  public url = "http://127.0.0.1:8000/api/books";
+  constructor(public http: HttpClient) { }
 
   public getData(): Observable<Book[]>{
     

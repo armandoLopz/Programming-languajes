@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
-import { Result } from '../../../models/book.models';
+import { Book } from '../../../models/booksLaravel.models';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
     <div mat-dialog-content>
       <mat-form-field>
         <mat-label>Autor</mat-label>
-        <input matInput [(ngModel)]="data.authors[0].name">
+        <input matInput [(ngModel)]="data.author">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Libro</mat-label>
@@ -21,23 +21,23 @@ import { CommonModule } from '@angular/common';
       </mat-form-field>
       <mat-form-field>
         <mat-label>Fecha de Nacimiento</mat-label>
-        <input matInput [(ngModel)]="data.authors[0].birth_year" type="number">
+        <input matInput [(ngModel)]="data.bornDay" type="number">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Fecha de Muerte</mat-label>
-        <input matInput [(ngModel)]="data.authors[0].death_year" type="number">
+        <input matInput [(ngModel)]="data.deathDate" type="number">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Genero</mat-label>
-        <input matInput [(ngModel)]="data.subjects[0]">
+        <input matInput [(ngModel)]="data.genre">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Descargas</mat-label>
-        <input matInput [(ngModel)]="data.download_count" type="number">
+        <input matInput [(ngModel)]="data.downloads" type="number">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Lenguaje</mat-label>
-        <input matInput [(ngModel)]="data.languages[0]">
+        <input matInput [(ngModel)]="data.languajes">
       </mat-form-field>
     </div>
     <div mat-dialog-actions class="botones">
@@ -52,7 +52,7 @@ import { CommonModule } from '@angular/common';
 export class EditDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<EditDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Result
+    @Inject(MAT_DIALOG_DATA) public data: Book
   ) {}
 
   onCancel(): void {

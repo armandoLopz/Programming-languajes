@@ -7,4 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/books', BookController::class );
+Route::get('/api/books', BookController::class );
+Route::post('/api/books', [BookController::class, 'store'] )->name('book.store');
+Route::delete('/api/books', BookController::class );
+Route::patch('/api/books', BookController::class );

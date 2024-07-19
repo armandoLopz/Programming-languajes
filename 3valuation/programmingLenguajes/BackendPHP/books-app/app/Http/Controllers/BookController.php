@@ -5,9 +5,10 @@ class BookController
 {
 
     public function __invoke(){
-
         
         return DB::table('books')->get();
     }
+
     
+
 }

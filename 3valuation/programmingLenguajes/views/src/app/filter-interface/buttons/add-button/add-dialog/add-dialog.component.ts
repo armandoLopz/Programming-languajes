@@ -4,8 +4,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Result, Language, MediaType } from '../../../../models/book.models';
-
+//import { Result, Language, MediaType } from '../../../../models/book.models';
+import { Book } from '../../../../models/booksLaravel.models';
 @Component({
   selector: 'app-add-dialog',
   template: `
@@ -13,7 +13,7 @@ import { Result, Language, MediaType } from '../../../../models/book.models';
     <div mat-dialog-content>
       <mat-form-field>
         <mat-label>Autor</mat-label>
-        <input matInput [(ngModel)]="newBook.authors[0].name">
+        <input matInput [(ngModel)]="newBook.author">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Libro</mat-label>
@@ -21,56 +21,41 @@ import { Result, Language, MediaType } from '../../../../models/book.models';
       </mat-form-field>
       <mat-form-field>
         <mat-label>Fecha de Nacimiento</mat-label>
-        <input matInput [(ngModel)]="newBook.authors[0].birth_year" type="number">
+        <input matInput [(ngModel)]="newBook.bornDay" type="number">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Fecha de Muerte</mat-label>
-        <input matInput [(ngModel)]="newBook.authors[0].death_year" type="number">
+        <input matInput [(ngModel)]="newBook.deathDate" type="number">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Género</mat-label>
-        <input matInput [(ngModel)]="newBook.subjects[0]">
+        <input matInput [(ngModel)]="newBook.genre">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Descargas</mat-label>
-        <input matInput [(ngModel)]="newBook.download_count" type="number">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Lenguaje</mat-label>
-        <input matInput [(ngModel)]="newBook.languages" placeholder="Código de lenguaje">
+        <input matInput [(ngModel)]="newBook.downloads" type="number">
       </mat-form-field>
     </div>
     <div mat-dialog-actions class="botones">
       <button mat-button (click)="onCancel()">Cancelar</button>
       <button mat-button (click)="onAdd()" class="agregar">Agregar</button>
     </div>
+
   `,
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule, FormsModule, CommonModule],
   styleUrls: ['./add-dialog.component.css']
 })
 export class AddDialogComponent {
-  newBook: Result = {
-    id: 0,
+  newBook: Book = {
+
     title: '',
-    authors: [{ name: '', birth_year: null, death_year: null }],
-    translators: [],
-    subjects: [''],
-    bookshelves: [],
-    languages: [],
-    copyright: false,
-    media_type: 'application/octet-stream' as MediaType,
-    formats: {
-      "text/html": "",
-      "application/epub+zip": "",
-      "application/x-mobipocket-ebook": "",
-      "application/rdf+xml": "",
-      "text/plain; charset=utf-8": "",
-      "text/plain; charset=us-ascii": "",
-      "application/octet-stream": "",
-      "image/jpeg": ""
-    },
-    download_count: 0
+    author:'',
+    genre: '',
+    languajes: '',
+    bornDay: 0,
+    deathDate: 0,
+    downloads: 0
   };
 
   newLanguage: string = '';
@@ -83,7 +68,6 @@ export class AddDialogComponent {
 
   onAdd(): void {
     this.dialogRef.close(this.newBook);
-    this.newBook.languages = this.newLanguage.split(',').map(code => ({ code: code.trim() }));
   }
 }
 
