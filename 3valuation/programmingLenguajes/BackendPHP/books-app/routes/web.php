@@ -7,7 +7,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/api/books', BookController::class );
-Route::post('/api/books', [BookController::class, 'store'] )->name('book.store');
-Route::delete('/api/books', BookController::class );
-Route::patch('/api/books', BookController::class );
+Route::get('/api/books', [BookController::class, 'index']);
+
+Route::post('/api/books', [BookController::class, 'store']);
+
+Route::put('/api/books/{id}', [BookController::class, 'update']);
+
+Route::delete('/api/books/{id}', [BookController::class, 'destroy'] );
+
