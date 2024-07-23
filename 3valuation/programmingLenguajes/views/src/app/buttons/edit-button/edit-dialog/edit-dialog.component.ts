@@ -35,10 +35,6 @@ import { CommonModule } from '@angular/common';
         <mat-label>Descargas</mat-label>
         <input matInput [(ngModel)]="data.downloads" type="number">
       </mat-form-field>
-      <mat-form-field>
-        <mat-label>Lenguaje</mat-label>
-        <input matInput [(ngModel)]="data.languajes">
-      </mat-form-field>
     </div>
     <div mat-dialog-actions class="botones">
       <button mat-button (click)="onCancel()">Cancelar</button>

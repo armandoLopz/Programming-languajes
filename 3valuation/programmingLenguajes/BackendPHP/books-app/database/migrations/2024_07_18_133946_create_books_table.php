@@ -18,8 +18,7 @@ return new class extends Migration
             $table->integer('bornDay');
             $table->integer('deathDate');
             $table->string('genre');
-            $table->integer('downloads');
-            $table->string('languajes');
+            $table->integer('downloads')->default(0);
             $table->timestamps();
         });
     }

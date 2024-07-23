@@ -14,7 +14,6 @@ class book extends Model
         'deathDate',
         'genre',
         'downloads',
-        'languajes',
     ];
 
     protected $primaryKey = 'id';

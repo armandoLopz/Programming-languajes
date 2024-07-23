@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DeleteButtonComponent {
 
-  constructor(private httpClient: HttpClient){}
+  constructor(public httpClient: HttpClient){}
 
   @Input() index!: number;
   @Output() delete = new EventEmitter<number>();

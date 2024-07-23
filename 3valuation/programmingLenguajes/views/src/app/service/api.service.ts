@@ -16,9 +16,19 @@ export class ApiService {
   }
 
 
-  postUser(book: Book){
+  postBook(book: Book){
+    
+    return this.http.post<Book>(this.url, book);
+  }
 
-    return this.http.post<any>(this.url, book);
+  deleteBook(id: number){
+
+    return this.http.delete<any>(`${this.url}/${id}`);
+  }
+
+  updateBook(book: Book){
+
+    return this.http.put<any>(`${this.url}/${book.id}`, book);
   }
 
 }

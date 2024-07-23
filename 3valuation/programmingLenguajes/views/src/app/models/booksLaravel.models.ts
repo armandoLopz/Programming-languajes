@@ -6,5 +6,4 @@ export interface Book {
     deathDate: number;
     genre:     string;
     downloads: number;
-    languajes: string;
 }

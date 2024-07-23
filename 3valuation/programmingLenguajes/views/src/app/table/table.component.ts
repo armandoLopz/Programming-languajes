@@ -10,6 +10,7 @@ import { FilterInterfaceComponent } from '../filter-interface/filter-interface.c
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from '../buttons/edit-button/edit-dialog/edit-dialog.component';
+
 @Component({
   selector: 'app-table',
   standalone: true,
@@ -40,10 +41,33 @@ export class TableComponent implements OnInit{
     
     this.data = filteredData;
   }
+  
   deleteRow(index: number) {
-    this.data.splice(index, 1);
+    
+    const idToDelete: number | undefined = this.data[index]?.id;
+    if (idToDelete) {
+    
+      this.apiService.deleteBook(idToDelete).subscribe({
+
+        next(value) {
+            console.log(value);
+            
+        },error(err) {
+            console.log(err);
+            
+        },
+      });
+      this.data.splice(index, 1);
+
+    } else {
+        console.error('data[index].id is undefined');
+    }
   }
   addNewElement(newBook: Book) {
+    
+    console.log("Receive in table");
+    
+    this.apiService.postBook(newBook).subscribe();
     this.data.push(newBook);
   }
   

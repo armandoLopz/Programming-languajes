@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
-import { Result } from '../../../models/book.models';
+import { Book } from '../../../models/booksLaravel.models';
 
 @Component({
   selector: 'app-add-button',
@@ -11,18 +11,13 @@ import { Result } from '../../../models/book.models';
   
 })
 export class AddButtonComponent {
-  @Output() newElement = new EventEmitter<Result>();
+  @Output() newElement = new EventEmitter<Book>();
 
   constructor(public dialog: MatDialog) {}
 
   openAddDialog(): void {
-    const dialogRef = this.dialog.open(AddDialogComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.newElement.emit(result);
-      }
-    });
+    
+    this.newElement.emit();
   }
 }
 

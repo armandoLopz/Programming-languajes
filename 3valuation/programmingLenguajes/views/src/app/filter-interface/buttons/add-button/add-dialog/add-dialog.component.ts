@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 //import { Result, Language, MediaType } from '../../../../models/book.models';
 import { Book } from '../../../../models/booksLaravel.models';
-import { ApiService } from '../../../../service/api.service';
 @Component({
   selector: 'app-add-dialog',
   template: `
@@ -53,31 +52,18 @@ export class AddDialogComponent {
     title: '',
     author:'',
     genre: '',
-    languajes: '',
     bornDay: 0,
     deathDate: 0,
     downloads: 0
   };
 
-  newLanguage: string = '';
-
-  constructor(private apiService: ApiService, public dialogRef: MatDialogRef<AddDialogComponent>) {}
+  constructor(public dialogRef: MatDialogRef<AddDialogComponent>) {}
 
   onCancel(): void {
     this.dialogRef.close();
   }
 
   onAdd(): void {
-
-    this.apiService.postUser(this.newBook).subscribe({
-      next(value) {
-          console.log(value);
-          
-      },error(err) {
-          console.log(err);
-          
-      },
-    })
     this.dialogRef.close(this.newBook);
   }
 }
