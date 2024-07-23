@@ -14,4 +14,11 @@ export class ApiService {
     
     return this.http.get<Book[]>(this.url);
   }
+
+
+  postUser(book: Book){
+
+    return this.http.post<any>(this.url, book);
+  }
+
 }
