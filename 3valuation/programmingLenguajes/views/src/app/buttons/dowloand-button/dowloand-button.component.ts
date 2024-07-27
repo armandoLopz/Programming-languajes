@@ -16,16 +16,13 @@ import { MatButtonModule } from '@angular/material/button';
 
   downloadZip(book: any): void {
     const zip = new JSZip();
-    zip.file('autor.txt',String( book.authors[0].name));
+    zip.file('autor.txt',String( book.authors));
     zip.file('libro.txt', String(book.title));
-    zip.file('fechaNacimiento.txt', String(book.authors[0].birth_year));
-    zip.file('fechaMuerte.txt', String(book.authors[0].death_year));
-    zip.file('temas.txt', book.subjects.join(', '));
-    zip.file('idiomas.txt', book.languages.join(', '));
-    zip.file('descargas.txt',book.download_count.toString());
+    zip.file('fechaNacimiento.txt', String(book.bornDay));
+    zip.file('fechaMuerte.txt', String(book.deathDate));
+    zip.file('temas.txt', book.genre);
+    zip.file('descargas.txt',book.downloads.toString());
     
-
-
     zip.generateAsync({ type: 'blob' }).then(content => {
       saveAs(content, `${book.title}-details.zip`);
     });

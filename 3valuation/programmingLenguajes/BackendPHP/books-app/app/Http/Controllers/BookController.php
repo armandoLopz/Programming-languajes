@@ -54,30 +54,38 @@ class BookController
 
     public function update(Request $request, $id){
         
-        $books = Book::find($id);
-
-        if (!$books) {
+        try{
             
-            $message = [
-
-                "message"=> "Libro no encontrado",
-                'status'=> 404
-            ];
-
-            return response()->json($message,404);
+            $books = Book::find($id);
+    
+            if (!$books) {
+                
+                $message = [
+    
+                    "message"=> "Libro no encontrado",
+                    'status'=> 404
+                ];
+    
+                return response()->json($message,404);
+            }
+            
+            $books->title = $request->title;
+            $books->author = $request->author;
+            $books->bornDay = $request->bornDay;
+            $books->deathDate = $request->deathDate;
+            $books->genre = $request->genre;
+            $books->downloads = $request->downloads;
+            
+            $books->save();
+            
+            return response()->json($books,200);
+        } catch (\Exception $e) {
+            return response()->json($e->getMessage(),500);
         }
-        
-        $books->title = $request->title;
-        $books->author = $request->author;
-        $books->bornDay = $request->bornDay;
-        $books->deathDate = $request->deathDate;
-        $books->genre = $request->genre;
-        $books->languajes = $request->languajes;
-        $books->downloads = $request->downloads;
-        
-        $books->save();
-        
-        return response()->json($books,200);
     }
 
+    public function hola() {
+        
+        return "hola";
+    }
 }

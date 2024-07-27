@@ -27,7 +27,7 @@ export class ApiService {
   }
 
   updateBook(book: Book){
-
+    
     return this.http.put<any>(`${this.url}/${book.id}`, book);
   }
 

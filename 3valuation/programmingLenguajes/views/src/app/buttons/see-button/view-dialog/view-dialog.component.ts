@@ -15,7 +15,6 @@ import { CommonModule } from '@angular/common';
       <p>Fecha de Nacimiento: {{ data.bornDay }}</p>
       <p>Fecha de Muerte: {{  data.deathDate }}</p>
       <p>Genero: {{data.genre}}</p>
-      <p>Lenguaje:{{data.languajes}}</p>
       <p>Descargas:{{data.downloads}}</p>
     </div>
     <div mat-dialog-actions>

@@ -67,5 +67,3 @@ export class AddDialogComponent {
     this.dialogRef.close(this.newBook);
   }
 }
-
-

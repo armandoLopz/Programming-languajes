@@ -65,15 +65,21 @@ export class TableComponent implements OnInit{
   }
   addNewElement(newBook: Book) {
     
-    console.log("Receive in table");
-    
-    this.apiService.postBook(newBook).subscribe();
     this.data.push(newBook);
+    this.apiService.postBook(newBook).subscribe();
   }
   
   editElement(index: number, element: Book) {
+
     const dialogRef = this.dialog.open(EditDialogComponent, {
       data: { ...element }
     });
-}
+    
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) { 
+        this.data[index] = result;
+        this.apiService.updateBook(result).subscribe();
+      }
+    });
+  }
 }

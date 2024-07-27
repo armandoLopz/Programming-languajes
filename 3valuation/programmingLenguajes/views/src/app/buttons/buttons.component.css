@@ -1,0 +1,12 @@
+button{
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 15%;
+    margin: 8px;
+}
+
+button:hover {
+    
+    background-color: #9c2020; 
+    border: 1px solid #000000;
+}
