@@ -7,3 +7,4 @@ export interface Book {
     genre:     string;
     downloads: number;
 }
+
