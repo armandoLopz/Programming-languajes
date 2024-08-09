@@ -5,7 +5,7 @@ import { Book } from '../../../models/booksLaravel.models';
 
 @Component({
   selector: 'app-add-button',
-  templateUrl: './add-button.component.html',
+  template: `<button mat-button (click)="openAddDialog()">Agregar</button>`,
   standalone: true,
   styleUrl:'./add-button.component.css'
   

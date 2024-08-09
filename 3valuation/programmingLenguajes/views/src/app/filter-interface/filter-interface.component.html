@@ -1,9 +1,3 @@
-<div id="addContent">
-    
-    <h2>Agregar registro a la tabla</h2>
-    <app-add-button (newElement)="openAddDialog()" class="boton"></app-add-button>
-</div>
-
 <div>
     <h2>Filtrar tabla: </h2>
     
@@ -15,6 +9,7 @@
     
     <br> <br>
     <app-filter-button (filterClicked)="onFilterClicked()"></app-filter-button>
+    <app-add-button (newElement)="openAddDialog()" class="boton"></app-add-button>
     
 </div>
 
