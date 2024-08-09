@@ -23,7 +23,9 @@
                 <td id="title">{{book.title}}</td>
                 <td>{{book.authors[0].birth_year}}</td>
                 <td>{{book.authors[0].death_year}}</td>
-                         
+                
+                
+                
                 <td>
                     <app-delete-button [index]="i" (delete)="deleteRow($event)"/>
                     <app-dowloand-button [book]="book"/><br>
